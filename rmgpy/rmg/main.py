@@ -57,6 +57,7 @@ from rmgpy.data.thermo import ThermoLibrary
 from rmgpy.data.base import Entry
 from rmgpy.chemkin import loadChemkinFile, getSpeciesIdentifier
 from rmgpy import settings
+import rmgpy.constants as constants
 
 from rmgpy.kinetics.diffusionLimited import diffusionLimiter
 
@@ -541,14 +542,18 @@ class RMG(util.Subject):
         Execute an RMG job using the command-line arguments `args` as returned
         by the :mod:`argparse` package.
         """
-    
+        
         self.initialize(**kwargs)
-
+        
         # register listeners
         self.register_listeners()
 
         self.done = False
         
+        #get maximum temperature for Gibbs energy filtering
+        self.Ts = [r.T.value_si for r in self.reactionSystems]
+        self.toleranceThermoKeepSpeciesInEdge = self.modelSettingsList[0].toleranceThermoKeepSpeciesInEdge
+                                     
         # Initiate first reaction discovery step after adding all core species
         if self.filterReactions:
             # Run the reaction system to update threshold and react flags
@@ -570,7 +575,9 @@ class RMG(util.Subject):
         self.reactionModel.enlarge(reactEdge=True, 
             unimolecularReact=self.unimolecularReact, 
             bimolecularReact=self.bimolecularReact)
-
+        
+        self.filterEdgeByGibbs() #filter all species by Gibbs Energy
+        
         logging.info('Completed initial enlarge edge step...')
         
         self.saveEverything()
@@ -588,6 +595,10 @@ class RMG(util.Subject):
                 simulatorSettings = self.simulatorSettingsList[0]
 
             logging.info('Beginning model generation stage {0}'.format(q+1))
+            
+            self.toleranceThermoKeepSpeciesInEdge = modelSettings.toleranceThermoKeepSpeciesInEdge
+            self.maximumEdgeSpecies = modelSettings.maximumEdgeSpecies
+            self.minCoreSizeForPrune = modelSettings.minCoreSizeForPrune
             
             self.done = False
 
@@ -694,11 +705,15 @@ class RMG(util.Subject):
                     logging.info('')
 
                     objectsToEnlarge = list(set(objectsToEnlarge))
-
+                    
+                    numOldEdgeSpecies = len(self.reactionModel.edge.species)
+                    
                     # Add objects to enlarge to the core first
                     for objectToEnlarge in objectsToEnlarge:
                         self.reactionModel.enlarge(objectToEnlarge)
-                        
+                    
+                    self.filterEdgeByGibbs(numOldEdgeSpecies)
+                                    
                     if len(self.reactionModel.core.species) > numCoreSpecies:
                         tempModelSettings = deepcopy(modelSettings)
                         tempModelSettings.toleranceKeepInEdge = 0
@@ -727,17 +742,21 @@ class RMG(util.Subject):
                         else:
                             self.updateReactionThresholdAndReactFlags()
                         
+                        numOldEdgeSpecies = len(self.reactionModel.edge.species)
+                        
                         self.reactionModel.enlarge(reactEdge=True, 
                                 unimolecularReact=self.unimolecularReact, 
                                 bimolecularReact=self.bimolecularReact)
-                    
+                        
+                        self.filterEdgeByGibbs(numOldEdgeSpecies)
+                           
                     #Adjust Surface
                     #we add added species and remove any species moved out of the core
                     #for now we remove reactions that become part of a PDepNetwork by intersecting with the core
                     #thus the surface algorithm currently (June 2017) is not implemented for pdep networks
                     self.reactionModel.surfaceSpecies = list(((surfSpcs | newSurfaceSpcsAdd)-newSurfaceSpcsLoss) & set(self.reactionModel.core.species))
                     self.reactionModel.surfaceReactions = list(((surfRxns | newSurfaceRxnsAdd)-newSurfaceRxnsLoss) & set(self.reactionModel.core.reactions))
-                        
+                    
                     maxNumSpcsHit = len(self.reactionModel.core.species) >= modelSettings.maxNumSpecies
 
                     if maxNumSpcsHit: #breaks the while loop 
@@ -1357,6 +1376,66 @@ class RMG(util.Subject):
                 if '//' in line: line = line[0:line.index('//')]
         return line
     
+    def filterEdgeByGibbs(self,numOldEdgeSpecies=0):
+        """
+        Calculates the minimum dimensionless gibbs energy of formation for edge species further out than numOldEdgeSpecies
+        and removes species whose (Gf(Tmax)-Gfmax)/(Gfmax-Gfmin) > toleranceThermoKeepSpeciesInEdge
+        if the maximumEdgeSpecies has been exceeded it will remove the species with the greatest Gf values
+        """
+        toleranceThermoKeepSpeciesInEdge = self.toleranceThermoKeepSpeciesInEdge
+
+        if not numpy.isinf(toleranceThermoKeepSpeciesInEdge) and len(self.reactionModel.core.species) > self.minCoreSizeForPrune:
+            #standard thermodynamic filtering
+            Tmax = max(self.Ts)
+            coreGfs = [spc.thermo.getFreeEnergy(Tmax) for spc in self.reactionModel.core.species]
+            Gfmax = max(coreGfs)
+            Gfmin = min(coreGfs)
+            
+            spcs = self.reactionModel.edge.species[numOldEdgeSpecies:]
+            Gfs = numpy.array([spc.thermo.getFreeEnergy(Tmax) for spc in spcs])
+            Gns = (Gfs-Gfmax)/(Gfmax-Gfmin)
+            boos = Gns > toleranceThermoKeepSpeciesInEdge
+            inds = numpy.nonzero(boos)[0]
+            
+            for i in inds:
+                spc = spcs[i]
+                logging.info('Removing species {0} from edge because it\'s Gibbs number {1} is greater than the toleranceThermoKeepSpeciesInEdge of {2} '.format(spc,Gns[i],toleranceThermoKeepSpeciesInEdge))
+                self.reactionModel.removeSpeciesFromEdge(self.reactionSystems,spc)
+            
+            #handle if the maximum number of edge species has been reached
+            numToRemove = len(self.reactionModel.edge.species) - self.maximumEdgeSpecies 
+            iteration = self.reactionModel.iteration 
+            minSpeciesExistIterationsForPrune = self.minSpeciesExistIterationsForPrune
+            
+            if numToRemove > 0: #implies flux pruning is off or did not trigger
+                logging.info('Reached maximum number of edge species')
+                logging.info('Attempting to remove excess edge species with Thermodynamic filtering')
+                spcs = self.reactionModel.edge.species
+                Gfs = numpy.array([spc.thermo.getFreeEnergy(Tmax) for spc in spcs])
+                Gns = (Gfs-Gfmax)/(Gfmax-Gfmin) 
+                inds = numpy.argsort(Gns) #could actually do this with the Gfs, but want to print the Gn value later
+                inds = inds[::-1] #get in order of increasing Gf
+
+                ind = 0
+                removeInds = []
+                
+                while ind < len(inds) and numToRemove > 0: #find the species we can remove and collect indices for removal     
+                    i = inds[ind]
+                    spc = spcs[i]
+                    if iteration - spc.creationIteration > minSpeciesExistIterationsForPrune:
+                        removeInds.append(i)
+                        numToRemove -= 1
+                    ind += 1
+                    
+                for i in removeInds:
+                    spc = spcs[i]
+                    logging.info('Removing species {0} from edge to meet maximum number of edge species, Gibbs number is {1}'.format(spc,Gns[i]))
+                    self.reactionModel.removeSpeciesFromEdge(self.reactionSystems,spc)
+                    
+            #call garbage collection
+            collected = gc.collect()
+            logging.info('Garbage collector: collected %d objects.' % (collected))
+                    
 ################################################################################
 def processToSpeciesNetworks(obj,reactionSystem,coreSpecies):
     """
