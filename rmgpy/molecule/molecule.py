@@ -810,12 +810,15 @@ class Molecule(Graph):
         Update multiplicity, and sort atoms using the new
         connectivity values.
         """
-        self.updateAtomTypes()
+
         self.updateMultiplicity()
+        self.updateLonePairs()
         self.sortVertices()
 
         for atom in self.atoms:
             atom.updateCharge()
+
+        self.updateAtomTypes()
 
     def getFormula(self):
         """
