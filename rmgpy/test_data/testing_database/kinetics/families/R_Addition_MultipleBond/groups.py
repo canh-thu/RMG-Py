@@ -49,7 +49,7 @@ entry(
     group = 
 """
 1 *1 Cdd u0 {2,D} {3,D}
-2 *2 Od  u0 {1,D}
+2 *2 O2d  u0 {1,D}
 3    C   u0 {1,D}
 """,
     kinetics = None,
@@ -62,7 +62,7 @@ entry(
 """
 1 *1 Cdd u0 {2,D} {3,D}
 2 *2 Cdd u0 {1,D} {4,D}
-3    Od  u0 {1,D}
+3    O2d  u0 {1,D}
 4    C   u0 {2,D}
 """,
     kinetics = None,
@@ -478,7 +478,7 @@ L1: YJ
 )
 
 forbidden(
-    label = "Od",
+    label = "O2d",
     group = 
 """
 1 *1 O u0 {2,D}
