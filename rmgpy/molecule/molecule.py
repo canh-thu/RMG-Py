@@ -1348,6 +1348,7 @@ class Molecule(Graph):
             for atom2 in atom1.bonds:
                 bond = Bond(mapping[atom1], mapping[atom2], 1)
                 newMol.addBond(bond)
+        newMol.updateLonePairs()
         newMol.updateAtomTypes()
         return newMol
 
