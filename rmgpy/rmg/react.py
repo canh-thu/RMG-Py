@@ -64,7 +64,7 @@ def react(*spcTuples):
 
     return reactions
 
-def reactSpecies(speciesTuple):
+def reactSpecies(speciesTuple, shouldDeflate = True):
     """
     given one species tuple, will find the reactions and remove degeneracy
     from them.
@@ -95,10 +95,10 @@ def reactSpecies(speciesTuple):
             zippedList.append((mol,spec.index))
 
     molecules, reactantIndices = zip(*zippedList)
-
-    deflate(reactions,
-            [spec for spec in speciesTuple],
-            [spec.index for spec in speciesTuple])
+    if shouldDeflate:
+        deflate(reactions,
+                [spec for spec in speciesTuple],
+                [spec.index for spec in speciesTuple])
 
     return reactions
 
