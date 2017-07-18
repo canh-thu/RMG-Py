@@ -2078,11 +2078,11 @@ class KineticsFamily(Database):
         Where the TrainingReactionEntry is only present if it comes from a training reaction
         """
         
-        templateLabels = templateLabel.split()[0].split(';')
+        templateLabels = templateLabel.split()[-1].split(';')
         template = self.retrieveTemplate(templateLabels)
         rule = self.getRateRule(template)
-        if 'from training reaction' in rule.data.comment:
-            trainingIndex = int(rule.data.comment.split()[-1])
+        if 'From training reaction' in rule.data.comment:
+            trainingIndex = int(rule.data.comment.split()[-2])
             trainingDepository = self.getTrainingDepository()
             return rule, trainingDepository.entries[trainingIndex]
         else:
