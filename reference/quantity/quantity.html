@@ -72,24 +72,14 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-quantity-quantity">
 <h1>rmgpy.quantity.Quantity<a class="headerlink" href="#rmgpy-quantity-quantity" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="rmgpy.quantity.Quantity">
-<code class="descclassname">rmgpy.quantity.</code><code class="descname">Quantity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.quantity.Quantity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <a class="reference internal" href="scalarquantity.html#rmgpy.quantity.ScalarQuantity" title="rmgpy.quantity.ScalarQuantity"><code class="xref py py-class docutils literal"><span class="pre">ScalarQuantity</span></code></a> or <a class="reference internal" href="arrayquantity.html#rmgpy.quantity.ArrayQuantity" title="rmgpy.quantity.ArrayQuantity"><code class="xref py py-class docutils literal"><span class="pre">ArrayQuantity</span></code></a> object for a
-given physical quantity. The physical quantity can be specified in several
-ways:</p>
-<ul class="simple">
-<li>A scalar-like or array-like value (for a dimensionless quantity)</li>
-<li>An array of arguments (including keyword arguments) giving some or all of
-the <cite>value</cite>, <cite>units</cite>, <cite>uncertainty</cite>, and/or <cite>uncertaintyType</cite>.</li>
-<li>A tuple of the form <code class="docutils literal"><span class="pre">(value,)</span></code>, <code class="docutils literal"><span class="pre">(value,units)</span></code>, 
-<code class="docutils literal"><span class="pre">(value,units,uncertainty)</span></code>, or 
-<code class="docutils literal"><span class="pre">(value,units,uncertaintyType,uncertainty)</span></code></li>
-<li>An existing <a class="reference internal" href="scalarquantity.html#rmgpy.quantity.ScalarQuantity" title="rmgpy.quantity.ScalarQuantity"><code class="xref py py-class docutils literal"><span class="pre">ScalarQuantity</span></code></a> or <a class="reference internal" href="arrayquantity.html#rmgpy.quantity.ArrayQuantity" title="rmgpy.quantity.ArrayQuantity"><code class="xref py py-class docutils literal"><span class="pre">ArrayQuantity</span></code></a> object, for
-which a copy is made</li>
-</ul>
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/quantity/quantity.rst</tt>, line 7)</p>
+autodoc: failed to import function &#8216;Quantity&#8217; from module &#8216;rmgpy.quantity&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+ImportError: dynamic module does not define module export function (PyInit_quantity)
+</div>
 </div>
 
 
@@ -192,7 +182,7 @@ which a copy is made</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

@@ -72,41 +72,26 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-molecule-element">
 <h1>rmgpy.molecule.Element<a class="headerlink" href="#rmgpy-molecule-element" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.molecule.Element">
-<em class="property">class </em><code class="descclassname">rmgpy.molecule.</code><code class="descname">Element</code><a class="headerlink" href="#rmgpy.molecule.Element" title="Permalink to this definition">¶</a></dt>
-<dd><p>A chemical element. The attributes are:</p>
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">docstring of rmgpy.molecule.Element</tt>, line 12)</p>
-<p>Malformed table.
-Text in column margin in table line 10.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>=========== =============== ================================================
-Attribute   Type            Description
-=========== =============== ================================================
-`number`    ``int``         The atomic number of the element
-`symbol`    ``str``         The symbol used for the element
-`name`      ``str``         The IUPAC name of the element
-`mass`      ``float``       The mass of the element in kg/mol
-`covRadius` ``float``       Covalent bond radius in Angstrom
-`isotope`   ``int``         The isotope integer of the element
-`chemkinName` ``str``       The chemkin compatible representation of the element
-=========== =============== ================================================
-</pre></div>
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/element.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;Element&#8217; from module &#8216;rmgpy.molecule&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/element.rst</tt>, line 7)</p>
+autodoc: failed to import function &#8216;getElement&#8217; from module &#8216;rmgpy.molecule&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
-<p>This class is specifically for properties that all atoms of the same element
-share. Ideally there is only one instance of this class for each element.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.getElement">
-<code class="descclassname">rmgpy.molecule.</code><code class="descname">getElement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.getElement" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the <code class="xref py py-class docutils literal"><span class="pre">Element</span></code> object corresponding to the given parameter
-<cite>value</cite>. If an integer is provided, the value is treated as the atomic
-number. If a string is provided, the value is treated as the symbol. An
-<code class="xref py py-class docutils literal"><span class="pre">ElementError</span></code> is raised if no matching element is found.</p>
-</dd></dl>
-
 </div>
 
 
@@ -209,7 +194,7 @@ number. If a string is provided, the value is treated as the symbol. An
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

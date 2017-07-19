@@ -107,7 +107,7 @@ If the <code class="docutils literal"><span class="pre">multiplicity</span></cod
 (1 + number of unpaired electrons) is assumed.
 Thus, it can usually be omitted, but if present can be used to distinguish,
 for example, singlet CH2 from triplet CH2.</p>
-<p>If defining a Functional <a class="reference internal" href="group.html#rmgpy.molecule.Group" title="rmgpy.molecule.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a>, then the value must be a list,
+<p>If defining a Functional <code class="xref py py-class docutils literal"><span class="pre">Group</span></code>, then the value must be a list,
 which defines the multiplicities that will be matched by the group, eg.
 <code class="docutils literal"><span class="pre">multiplicity</span> <span class="pre">[1,2,3]</span></code> or, for a single value, <code class="docutils literal"><span class="pre">multiplicity</span> <span class="pre">[1]</span></code>.
 If a wildcard is desired, the line <code class="docutils literal"><span class="pre">'multiplicity</span> <span class="pre">x</span></code> can be used instead to accept
@@ -145,11 +145,11 @@ a sequence of tokens describing the electronic state of the atom:</p>
 <li><code class="docutils literal"><span class="pre">c0</span></code> formal <strong>charge</strong> on the atom, e.g. <code class="docutils literal"><span class="pre">c-1</span></code> (negatively charged),
 <code class="docutils literal"><span class="pre">c0</span></code>, <code class="docutils literal"><span class="pre">c+1</span></code> (positively charged)</li>
 </ul>
-<p>For <a class="reference internal" href="molecule.html#rmgpy.molecule.Molecule" title="rmgpy.molecule.Molecule"><code class="xref py py-class docutils literal"><span class="pre">Molecule</span></code></a> definitions:
+<p>For <code class="xref py py-class docutils literal"><span class="pre">Molecule</span></code> definitions:
 The value must be a single integer (and for charge must have a + or - sign if not equal to 0)
 The number of unpaired electrons (i.e. radical electrons) is required, even if zero.
 The number of lone pairs and the formal charge are assumed to be zero if omitted.</p>
-<p>For <a class="reference internal" href="group.html#rmgpy.molecule.Group" title="rmgpy.molecule.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> definitions:
+<p>For <code class="xref py py-class docutils literal"><span class="pre">Group</span></code> definitions:
 The value can be an integer or a list of integers (with signs, for charges),
 eg. <code class="docutils literal"><span class="pre">u[0,1,2]</span></code> or <code class="docutils literal"><span class="pre">c[0,+1,+2,+3,+4]</span></code>, or may be a wildcard <code class="docutils literal"><span class="pre">x</span></code>
 which matches any valid value,
@@ -199,7 +199,7 @@ electrons, lone pairs, and charges are all correctly defined:</p>
 <col width="40%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
+<tr class="row-odd"><th class="head">&nbsp;</th>
 <th class="head">Notation</th>
 <th class="head">Explanation</th>
 </tr>
@@ -234,8 +234,8 @@ electrons, lone pairs, and charges are all correctly defined:</p>
 <tr class="row-even"><td>Ar</td>
 <td>Argon atom</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td rowspan="4">Chemical Bond</td>
 <td>S</td>
@@ -253,20 +253,26 @@ electrons, lone pairs, and charges are all correctly defined:</p>
 </tbody>
 </table>
 </div></blockquote>
-<dl class="function">
-<dt id="rmgpy.molecule.adjlist.fromAdjacencyList">
-<code class="descclassname">rmgpy.molecule.adjlist.</code><code class="descname">fromAdjacencyList</code><span class="sig-paren">(</span><em>adjlist</em>, <em>group=False</em>, <em>saturateH=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.adjlist.fromAdjacencyList" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert a string adjacency list <cite>adjlist</cite> into a set of <code class="xref py py-class docutils literal"><span class="pre">Atom</span></code> and
-<code class="xref py py-class docutils literal"><span class="pre">Bond</span></code> objects.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.adjlist.toAdjacencyList">
-<code class="descclassname">rmgpy.molecule.adjlist.</code><code class="descname">toAdjacencyList</code><span class="sig-paren">(</span><em>atoms</em>, <em>multiplicity</em>, <em>label=None</em>, <em>group=False</em>, <em>removeH=False</em>, <em>removeLonePairs=False</em>, <em>oldStyle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.adjlist.toAdjacencyList" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert a chemical graph defined by a list of <cite>atoms</cite> into a string
-adjacency list.</p>
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/adjlist.rst</tt>, line 175)</p>
+autodoc: failed to import function &#8216;fromAdjacencyList&#8217; from module &#8216;rmgpy.molecule.adjlist&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/adjlist.rst</tt>, line 177)</p>
+autodoc: failed to import function &#8216;toAdjacencyList&#8217; from module &#8216;rmgpy.molecule.adjlist&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
+</div>
 </div>
 
 
@@ -369,7 +375,7 @@ adjacency list.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

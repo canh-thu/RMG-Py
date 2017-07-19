@@ -72,119 +72,34 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-qm-main">
 <h1>rmgpy.qm.main<a class="headerlink" href="#rmgpy-qm-main" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.qm.main.QMSettings">
-<em class="property">class </em><code class="descclassname">rmgpy.qm.main.</code><code class="descname">QMSettings</code><span class="sig-paren">(</span><em>software=None</em>, <em>method='pm3'</em>, <em>fileStore=None</em>, <em>scratchDirectory=None</em>, <em>onlyCyclics=True</em>, <em>maxRadicalNumber=0</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMSettings" title="Permalink to this definition">¶</a></dt>
-<dd><p>A minimal class to store settings related to quantum mechanics calculations.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="19%" />
-<col width="23%" />
-<col width="58%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Attribute</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><cite>software</cite></td>
-<td><code class="docutils literal"><span class="pre">str</span></code></td>
-<td>Quantum chemical package name in common letters</td>
-</tr>
-<tr class="row-odd"><td><cite>method</cite></td>
-<td><code class="docutils literal"><span class="pre">str</span></code></td>
-<td>Semi-empirical method</td>
-</tr>
-<tr class="row-even"><td><cite>fileStore</cite></td>
-<td><code class="docutils literal"><span class="pre">str</span></code></td>
-<td>The path to the QMfiles directory</td>
-</tr>
-<tr class="row-odd"><td><cite>scratchDirectory</cite></td>
-<td><code class="docutils literal"><span class="pre">str</span></code></td>
-<td>The path to the scratch directory</td>
-</tr>
-<tr class="row-even"><td><cite>onlyCyclics</cite></td>
-<td><code class="docutils literal"><span class="pre">bool</span></code></td>
-<td><code class="docutils literal"><span class="pre">True</span></code> if to run QM only on ringed species</td>
-</tr>
-<tr class="row-odd"><td><cite>maxRadicalNumber</cite></td>
-<td><code class="docutils literal"><span class="pre">int</span></code></td>
-<td>Radicals larger than this are saturated before applying HBI</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="rmgpy.qm.main.QMSettings.checkAllSet">
-<code class="descname">checkAllSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMSettings.checkAllSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check that all the required settings are set.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="rmgpy.qm.main.QMCalculator">
-<em class="property">class </em><code class="descclassname">rmgpy.qm.main.</code><code class="descname">QMCalculator</code><span class="sig-paren">(</span><em>software=None</em>, <em>method='pm3'</em>, <em>fileStore=None</em>, <em>scratchDirectory=None</em>, <em>onlyCyclics=True</em>, <em>maxRadicalNumber=0</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMCalculator" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Quantum Mechanics calculator object, to store settings.</p>
-<p>The attributes are:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="29%" />
-<col width="46%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Attribute</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><cite>settings</cite></td>
-<td><code class="xref py py-class docutils literal"><span class="pre">QMSettings</span></code></td>
-<td>Settings for QM calculations</td>
-</tr>
-<tr class="row-odd"><td><cite>database</cite></td>
-<td><code class="xref py py-class docutils literal"><span class="pre">ThermoLibrary</span></code></td>
-<td>Database containing QM calculations</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="rmgpy.qm.main.QMCalculator.checkPaths">
-<code class="descname">checkPaths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMCalculator.checkPaths" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check the paths in the settings are OK. Make folders as necessary.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.qm.main.QMCalculator.checkReady">
-<code class="descname">checkReady</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMCalculator.checkReady" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check that it&#8217;s ready to run calculations.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.qm.main.QMCalculator.getThermoData">
-<code class="descname">getThermoData</code><span class="sig-paren">(</span><em>molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMCalculator.getThermoData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate thermo data for the given <code class="xref py py-class docutils literal"><span class="pre">Molecule</span></code> via a quantum mechanics calculation.</p>
-<p>Ignores the settings onlyCyclics and maxRadicalNumber and does the calculation anyway if asked.
-(I.e. the code that chooses whether to call this method should consider those settings).</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.qm.main.QMCalculator.initialize">
-<code class="descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMCalculator.initialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Do any startup tasks.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.qm.main.QMCalculator.setDefaultOutputDirectory">
-<code class="descname">setDefaultOutputDirectory</code><span class="sig-paren">(</span><em>outputDirectory</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.qm.main.QMCalculator.setDefaultOutputDirectory" title="Permalink to this definition">¶</a></dt>
-<dd><p>IF the fileStore or scratchDirectory are not already set, put them in here.</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/qm/main.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;QMSettings&#8217; from module &#8216;rmgpy.qm.main&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/qm/main.py&#8221;, line 33, in &lt;module&gt;
+    import rmgpy.qm.mopac
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/qm/mopac.py&#8221;, line 30, in &lt;module&gt;
+    import external.cclib as cclib
+  File &#8220;/home/mark/workspace/RMG-Py/external/cclib/__init__.py&#8221;, line 10, in &lt;module&gt;
+    import progress
+ModuleNotFoundError: No module named &#8216;progress&#8217;
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/qm/main.rst</tt>, line 6)</p>
+autodoc: failed to import class &#8216;QMCalculator&#8217; from module &#8216;rmgpy.qm.main&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/qm/main.py&#8221;, line 33, in &lt;module&gt;
+    import rmgpy.qm.mopac
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/qm/mopac.py&#8221;, line 30, in &lt;module&gt;
+    import external.cclib as cclib
+  File &#8220;/home/mark/workspace/RMG-Py/external/cclib/__init__.py&#8221;, line 10, in &lt;module&gt;
+    import progress
+ModuleNotFoundError: No module named &#8216;progress&#8217;
+</div>
 </div>
 
 
@@ -287,7 +202,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

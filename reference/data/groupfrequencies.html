@@ -72,23 +72,16 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-data-statmech-groupfrequencies">
 <h1>rmgpy.data.statmech.GroupFrequencies<a class="headerlink" href="#rmgpy-data-statmech-groupfrequencies" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.data.statmech.GroupFrequencies">
-<em class="property">class </em><code class="descclassname">rmgpy.data.statmech.</code><code class="descname">GroupFrequencies</code><span class="sig-paren">(</span><em>frequencies=None</em>, <em>symmetry=1</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.statmech.GroupFrequencies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Represent a set of characteristic frequencies for a group in the frequency
-database. These frequencies are stored in the <cite>frequencies</cite> attribute, which
-is a <code class="docutils literal"><span class="pre">list</span></code> of <code class="docutils literal"><span class="pre">tuples</span></code>, where each <code class="docutils literal"><span class="pre">tuple</span></code> defines a lower bound,
-upper bound, and degeneracy. Each group also has a <cite>symmetry</cite> correction.</p>
-<dl class="method">
-<dt id="rmgpy.data.statmech.GroupFrequencies.generateFrequencies">
-<code class="descname">generateFrequencies</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.statmech.GroupFrequencies.generateFrequencies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a set of frequencies. For each characteristic frequency group,
-the number of frequencies returned is degeneracy * count, and these are
-distributed linearly between the lower and upper bounds.</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/data/groupfrequencies.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;GroupFrequencies&#8217; from module &#8216;rmgpy.data.statmech&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/statmech.py&#8221;, line 35, in &lt;module&gt;
+    import rmgpy.constants as constants
+ImportError: dynamic module does not define module export function (PyInit_constants)
+</div>
 </div>
 
 
@@ -191,7 +184,7 @@ distributed linearly between the lower and upper bounds.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

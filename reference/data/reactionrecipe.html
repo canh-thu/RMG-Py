@@ -72,90 +72,21 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-data-kinetics-reactionrecipe">
 <h1>rmgpy.data.kinetics.ReactionRecipe<a class="headerlink" href="#rmgpy-data-kinetics-reactionrecipe" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.data.kinetics.ReactionRecipe">
-<em class="property">class </em><code class="descclassname">rmgpy.data.kinetics.</code><code class="descname">ReactionRecipe</code><span class="sig-paren">(</span><em>actions=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.kinetics.ReactionRecipe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Represent a list of actions that, when executed, result in the conversion
-of a set of reactants to a set of products. There are currently five such
-actions:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="9%" />
-<col width="20%" />
-<col width="71%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Action Name</th>
-<th class="head">Arguments</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>CHANGE_BOND</td>
-<td><cite>center1</cite>, <cite>order</cite>, <cite>center2</cite></td>
-<td>change the bond order of the bond between <cite>center1</cite> and <cite>center2</cite> by <cite>order</cite>; do not break or form bonds</td>
-</tr>
-<tr class="row-odd"><td>FORM_BOND</td>
-<td><cite>center1</cite>, <cite>order</cite>, <cite>center2</cite></td>
-<td>form a new bond between <cite>center1</cite> and <cite>center2</cite> of type <cite>order</cite></td>
-</tr>
-<tr class="row-even"><td>BREAK_BOND</td>
-<td><cite>center1</cite>, <cite>order</cite>, <cite>center2</cite></td>
-<td>break the bond between <cite>center1</cite> and <cite>center2</cite>, which should be of type <cite>order</cite></td>
-</tr>
-<tr class="row-odd"><td>GAIN_RADICAL</td>
-<td><cite>center</cite>, <cite>radical</cite></td>
-<td>increase the number of free electrons on <cite>center</cite> by <cite>radical</cite></td>
-</tr>
-<tr class="row-even"><td>LOSE_RADICAL</td>
-<td><cite>center</cite>, <cite>radical</cite></td>
-<td>decrease the number of free electrons on <cite>center</cite> by <cite>radical</cite></td>
-</tr>
-<tr class="row-odd"><td>GAIN_PAIR</td>
-<td><cite>center</cite>, <cite>pair</cite></td>
-<td>increase the number of lone electron pairs on <cite>center</cite> by <cite>pair</cite></td>
-</tr>
-<tr class="row-even"><td>LOSE_PAIR</td>
-<td><cite>center</cite>, <cite>pair</cite></td>
-<td>decrease the number of lone electron pairs on <cite>center</cite> by <cite>pair</cite></td>
-</tr>
-</tbody>
-</table>
-<p>The actions are stored as a list in the <cite>actions</cite> attribute. Each action is
-a list of items; the first is the action name, while the rest are the
-action parameters as indicated above.</p>
-<dl class="method">
-<dt id="rmgpy.data.kinetics.ReactionRecipe.addAction">
-<code class="descname">addAction</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.kinetics.ReactionRecipe.addAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add an <cite>action</cite> to the reaction recipe, where <cite>action</cite> is a list
-containing the action name and the required parameters, as indicated in
-the table above.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.data.kinetics.ReactionRecipe.applyForward">
-<code class="descname">applyForward</code><span class="sig-paren">(</span><em>struct</em>, <em>unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.kinetics.ReactionRecipe.applyForward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the forward reaction recipe to <cite>molecule</cite>, a single
-<code class="xref py py-class docutils literal"><span class="pre">Molecule</span></code> object.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.data.kinetics.ReactionRecipe.applyReverse">
-<code class="descname">applyReverse</code><span class="sig-paren">(</span><em>struct</em>, <em>unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.kinetics.ReactionRecipe.applyReverse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the reverse reaction recipe to <cite>molecule</cite>, a single
-<code class="xref py py-class docutils literal"><span class="pre">Molecule</span></code> object.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.data.kinetics.ReactionRecipe.getReverse">
-<code class="descname">getReverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.kinetics.ReactionRecipe.getReverse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a reaction recipe that, when applied, does the opposite of
-what the current recipe does, i.e., it is the recipe for the reverse
-of the reaction that this is the recipe for.</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/data/reactionrecipe.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;ReactionRecipe&#8217; from module &#8216;rmgpy.data.kinetics&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/kinetics/__init__.py&#8221;, line 32, in &lt;module&gt;
+    from .common import *
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/kinetics/common.py&#8221;, line 36, in &lt;module&gt;
+    from rmgpy.data.base import DatabaseError, LogicNode
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/base.py&#8221;, line 233
+    exec f in global_context, local_context
+         ^
+SyntaxError: Missing parentheses in call to &#8216;exec&#8217;
+</div>
 </div>
 
 
@@ -258,7 +189,7 @@ of the reaction that this is the recipe for.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

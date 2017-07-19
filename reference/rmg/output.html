@@ -72,24 +72,32 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="saving-rmg-output">
 <h1>Saving RMG output<a class="headerlink" href="#saving-rmg-output" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="rmgpy.rmg.output.saveOutputHTML">
-<code class="descclassname">rmgpy.rmg.output.</code><code class="descname">saveOutputHTML</code><span class="sig-paren">(</span><em>path</em>, <em>reactionModel</em>, <em>partCoreEdge='core'</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.rmg.output.saveOutputHTML" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the current set of  species and reactions of <cite>reactionModel</cite> to
-an HTML file <cite>path</cite> on disk. As part of this process, drawings of all 
-species are created in the species folder (if they don&#8217;t already exist)
-using the <code class="xref py py-mod docutils literal"><span class="pre">rmgpy.molecule.draw</span></code> module. The <code class="xref py py-mod docutils literal"><span class="pre">jinja</span></code>
-package is used to generate the HTML; if this package is not found, no
-HTML will be generated (but the program will carry on).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.rmg.output.saveDiffHTML">
-<code class="descclassname">rmgpy.rmg.output.</code><code class="descname">saveDiffHTML</code><span class="sig-paren">(</span><em>path</em>, <em>commonSpeciesList</em>, <em>speciesList1</em>, <em>speciesList2</em>, <em>commonReactions</em>, <em>uniqueReactions1</em>, <em>uniqueReactions2</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.rmg.output.saveDiffHTML" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function outputs the species and reactions on an HTML page
-for the comparison of two RMG models.</p>
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/rmg/output.rst</tt>, line 5)</p>
+autodoc: failed to import function &#8216;saveOutputHTML&#8217; from module &#8216;rmgpy.rmg.output&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/rmg/output.py&#8221;, line 41, in &lt;module&gt;
+    from rmgpy.chemkin import getSpeciesIdentifier
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/chemkin.py&#8221;, line 148
+    except (IndexError, ValueError), e:
+                                   ^
+SyntaxError: invalid syntax
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/rmg/output.rst</tt>, line 7)</p>
+autodoc: failed to import function &#8216;saveDiffHTML&#8217; from module &#8216;rmgpy.rmg.output&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/rmg/output.py&#8221;, line 41, in &lt;module&gt;
+    from rmgpy.chemkin import getSpeciesIdentifier
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/chemkin.py&#8221;, line 148
+    except (IndexError, ValueError), e:
+                                   ^
+SyntaxError: invalid syntax
+</div>
 </div>
 
 
@@ -192,7 +200,7 @@ for the comparison of two RMG models.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

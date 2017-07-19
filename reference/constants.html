@@ -69,119 +69,16 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
       </ul>
     </div>
             
-  <div class="section" id="module-rmgpy.constants">
-<span id="physical-constants-rmgpy-constants"></span><h1>Physical constants (<a class="reference internal" href="#module-rmgpy.constants" title="rmgpy.constants"><code class="xref py py-mod docutils literal"><span class="pre">rmgpy.constants</span></code></a>)<a class="headerlink" href="#module-rmgpy.constants" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference internal" href="#module-rmgpy.constants" title="rmgpy.constants"><code class="xref py py-mod docutils literal"><span class="pre">rmgpy.constants</span></code></a> module contains module-level variables defining
-relevant physical constants relevant in chemistry applications. The recommended
-method of importing this module is</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rmgpy.constants</span> <span class="k">as</span> <span class="nn">constants</span>
-</pre></div>
+  <div class="section" id="physical-constants-rmgpy-constants">
+<h1>Physical constants (<code class="xref py py-mod docutils literal"><span class="pre">rmgpy.constants</span></code>)<a class="headerlink" href="#physical-constants-rmgpy-constants" title="Permalink to this headline">¶</a></h1>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/constants.rst</tt>, line 7)</p>
+autodoc: failed to import module &#8216;rmgpy.constants&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+ImportError: dynamic module does not define module export function (PyInit_constants)
 </div>
-<p>so as to not place the constants in the importing module&#8217;s global namespace.</p>
-<p>The constants defined in this module are listed in the table below:</p>
-<table border="1" class="docutils" id="id1">
-<caption><span class="caption-text">Physical constants defined in the <a class="reference internal" href="#module-rmgpy.constants" title="rmgpy.constants"><code class="xref py py-mod docutils literal"><span class="pre">rmgpy.constants</span></code></a> module</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col width="14%" />
-<col width="12%" />
-<col width="37%" />
-<col width="37%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Symbol</th>
-<th class="head">Constant</th>
-<th class="head">Value</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><span class="math">\(E_\mathrm{h}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">E_h</span></code></td>
-<td><span class="math">\(4.35974434 \times 10^{-18} \ \mathrm{J}\)</span></td>
-<td>Hartree energy</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(F\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">F</span></code></td>
-<td><span class="math">\(96485.3365 \ \mathrm{C/mol}\)</span></td>
-<td>Faraday constant</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(G\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">G</span></code></td>
-<td><span class="math">\(6.67384 \times 10^{-11} \ \mathrm{m^3/kg \cdot s^2}\)</span></td>
-<td>Newtonian gravitational constant</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(N_\mathrm{A}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">Na</span></code></td>
-<td><span class="math">\(6.02214179 \times 10^{23} \ \mathrm{mol^{-1}}\)</span></td>
-<td>Avogadro constant</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(R\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">R</span></code></td>
-<td><span class="math">\(8.314472 \ \mathrm{J/mol \cdot K}\)</span></td>
-<td>gas law constant</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(a_0\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">a0</span></code></td>
-<td><span class="math">\(5.2917721092 \times 10^{-11} \ \mathrm{m}\)</span></td>
-<td>Bohr radius</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(c\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">c</span></code></td>
-<td><span class="math">\(299792458 \ \mathrm{m/s}\)</span></td>
-<td>speed of light in a vacuum</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(e\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">e</span></code></td>
-<td><span class="math">\(1.602176565 \times 10^{-19} \ \mathrm{C}\)</span></td>
-<td>elementary charge</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(g\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">g</span></code></td>
-<td><span class="math">\(9.80665 \ \mathrm{m/s^2}\)</span></td>
-<td>standard acceleration due to gravity</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(h\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">h</span></code></td>
-<td><span class="math">\(6.62606896 \times 10^{-34} \ \mathrm{J \cdot s}\)</span></td>
-<td>Planck constant</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(\hbar\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">hbar</span></code></td>
-<td><span class="math">\(1.054571726 \times 10^{-34} \ \mathrm{J \cdot s}\)</span></td>
-<td>reduced Planck constant</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(k_\mathrm{B}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">kB</span></code></td>
-<td><span class="math">\(1.3806504 \times 10^{-23} \ \mathrm{J/K}\)</span></td>
-<td>Boltzmann constant</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(m_\mathrm{e}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">m_e</span></code></td>
-<td><span class="math">\(9.10938291 \times 10^{-31} \ \mathrm{kg}\)</span></td>
-<td>electron rest mass</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(m_\mathrm{n}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">m_n</span></code></td>
-<td><span class="math">\(1.674927351 \times 10^{-27} \ \mathrm{kg}\)</span></td>
-<td>neutron rest mass</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(m_\mathrm{p}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">m_p</span></code></td>
-<td><span class="math">\(1.672621777 \times 10^{-27} \ \mathrm{kg}\)</span></td>
-<td>proton rest mass</td>
-</tr>
-<tr class="row-odd"><td><span class="math">\(m_\mathrm{u}\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">amu</span></code></td>
-<td><span class="math">\(1.660538921 \times 10^{-27} \ \mathrm{kg}\)</span></td>
-<td>atomic mass unit</td>
-</tr>
-<tr class="row-even"><td><span class="math">\(\pi\)</span></td>
-<td><code class="xref py py-data docutils literal"><span class="pre">pi</span></code></td>
-<td><span class="math">\(3.14159 \ldots\)</span></td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
 </div>
 
 
@@ -284,7 +181,7 @@ method of importing this module is</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

@@ -73,9 +73,10 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
   <div class="section" id="running-cantherm">
 <h1>5. Running CanTherm<a class="headerlink" href="#running-cantherm" title="Permalink to this headline">¶</a></h1>
 <p>To execute a CanTherm job, invoke the command</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ python cantherm.py FILE
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python cantherm.py INPUTFILE
 </pre></div>
 </div>
+<p>The absolute or relative paths to the cantherm.py file as well as to the input file must be given.</p>
 <p>The job will run and the results will be saved to <code class="docutils literal"><span class="pre">output.py</span></code> in the same
 directory as the input file. If you wish to save the output elsewhere, use
 the <code class="docutils literal"><span class="pre">-o</span></code>/<code class="docutils literal"><span class="pre">--output</span></code> option, e.g.</p>
@@ -215,7 +216,7 @@ flag, e.g.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

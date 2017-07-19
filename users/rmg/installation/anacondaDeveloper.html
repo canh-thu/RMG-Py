@@ -105,10 +105,11 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 </pre></div>
 </div>
 </li>
-<li><p class="first">Modify environment variables. Add RMG-Py to the PYTHONPATH to ensure that you can access RMG modules from any python prompt.  Modify your <code class="docutils literal"><span class="pre">~/.bashrc</span></code> file by adding the following line</p>
+<li><p class="first">Modify environment variables. Add RMG-Py to the PYTHONPATH to ensure that you can access RMG modules from any folder. Modify your <code class="docutils literal"><span class="pre">~/.bashrc</span></code> file by adding the following line</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>export PYTHONPATH=$PYTHONPATH:YourFolder/RMG-Py/
 </pre></div>
 </div>
+<p>NOTE: Make sure to change <code class="docutils literal"><span class="pre">YourFolder</span></code> to the path leading to the <code class="docutils literal"><span class="pre">RMG-Py</span></code> code. Not doing so will lead to an error stating that python cannot find the module <code class="docutils literal"><span class="pre">rmgpy</span></code>.</p>
 </li>
 <li><p class="first">If you wish to always be able to run RMG-Py, you can modify the anaconda path to point to the RMG environment. Modify the following line in your <code class="docutils literal"><span class="pre">~/.bashrc</span></code> file</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>export PATH=~/anaconda/bin:$PATH
@@ -289,7 +290,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

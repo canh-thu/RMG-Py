@@ -98,8 +98,9 @@ using RMG&#8217;s thermo database, instead of being specified in the kinetic dat
 RMG always chooses to use kinetics from libraries over families. If multiple libraries
 contain the same reaction, then precedence is given to whichever library is
 listed first in the input.py file.</p>
-<p>For combustion mechanisms, you should always use <em>one</em> small-molecule
-combustion library, such as the pre-packaged ERC-Foundation Fuel.
+<p>For combustion mechanisms, you should always use at least one small-molecule
+combustion library, such as the pre-packaged <em>BurkeH2O2</em> and/or <em>FFCM1</em>
+for natural gas.
 The reactions contained in these libraries are poorly estimated by kinetic
 families and are universally important to combustion systems.</p>
 <p>Kinetic libraries should also be used in the cases where:</p>
@@ -109,6 +110,152 @@ families and are universally important to combustion systems.</p>
 <li>No family exists for the class of reaction</li>
 <li>You are not confident about the accuracy of kinetic parameters</li>
 </ul>
+<p>Below is a list of pre-packaged kinetics library reactions in RMG:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Library</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1989_Stewart_2CH3_to_C2H5_H</td>
+<td>Chemically Activated Methyl Recombination to Ethyl (2CH3 -&gt; C2H5 + H)</td>
+</tr>
+<tr class="row-odd"><td>2001_Tokmakov_H_Toluene_to_CH3_Benzene</td>
+<td>H + Toluene = CH3 + Benzene</td>
+</tr>
+<tr class="row-even"><td>2005_Senosiain_OH_C2H2</td>
+<td>pathways on the OH + acetylene surface</td>
+</tr>
+<tr class="row-odd"><td>2006_Joshi_OH_CO</td>
+<td>pathways on OH + CO = HOCO = H + CO2 surface</td>
+</tr>
+<tr class="row-even"><td>BurkeH2O2inArHe</td>
+<td>Comprehensive H2/O2 kinetic model in Ar or He atmosphere</td>
+</tr>
+<tr class="row-odd"><td>BurkeH2O2inN2</td>
+<td>Comprehensive H2/O2 kinetic model in N2 atmosphere</td>
+</tr>
+<tr class="row-even"><td>C10H11</td>
+<td>Cyclopentadiene pyrolysis in the presence of ethene</td>
+</tr>
+<tr class="row-odd"><td>C3</td>
+<td>Cyclopentadiene pyrolysis in the presence of ethene</td>
+</tr>
+<tr class="row-even"><td>C6H5_C4H4_Mebel</td>
+<td>Formation Mechanism of Naphthalene and Indene</td>
+</tr>
+<tr class="row-odd"><td>Chernov</td>
+<td>Soot Formation with C1 and C2 Fuels (aromatic reactions only)</td>
+</tr>
+<tr class="row-even"><td>CurranPentane</td>
+<td>Ignition of pentane isomers</td>
+</tr>
+<tr class="row-odd"><td>Dooley</td>
+<td>Methyl formate (contains several mechanisms)</td>
+</tr>
+<tr class="row-even"><td>ERC-FoundationFuelv0.9</td>
+<td>Small molecule combustio (natural gas)</td>
+</tr>
+<tr class="row-odd"><td>Ethylamine</td>
+<td>Ethylamine pyrolysis and oxidation</td>
+</tr>
+<tr class="row-even"><td>FFCM1(-)</td>
+<td>Foundational Fuel Chemistry Model Version 1.0 (excited species removed)</td>
+</tr>
+<tr class="row-odd"><td>Fulvene_H</td>
+<td>Cyclopentadiene pyrolysis in the presence of ethene</td>
+</tr>
+<tr class="row-even"><td>GRI-HCO</td>
+<td>The <cite>HCO &lt;=&gt; H + CO</cite> reaction</td>
+</tr>
+<tr class="row-odd"><td>GRI-Mech3.0</td>
+<td>Gas Research Institute natural gas mechanism optimized for 1 atm (discountinued Feb. 2000)</td>
+</tr>
+<tr class="row-even"><td>GRI-Mech3.0-N</td>
+<td>GRI-Mech3.0 including nitrogen chemistry (NOx from N2)</td>
+</tr>
+<tr class="row-odd"><td>Glarborg</td>
+<td>Mechanisms by P. Glarborg, assorted by carbon number</td>
+</tr>
+<tr class="row-even"><td>JetSurF2.0</td>
+<td>Jet Surrogate Fuel model up tp C12 (excited species removed)</td>
+</tr>
+<tr class="row-odd"><td>Mebel_C6H5_C2H2</td>
+<td>Pathways from benzene to naphthalene</td>
+</tr>
+<tr class="row-even"><td>Mebel_Naphthyl</td>
+<td>Reactions of naphthyl-1 and naphthyl-2</td>
+</tr>
+<tr class="row-odd"><td>Methylformate</td>
+<td>Methyl formate</td>
+</tr>
+<tr class="row-even"><td>Narayanaswamy</td>
+<td>Oxidation of substituted aromatic species (aromatic reactions only)</td>
+</tr>
+<tr class="row-odd"><td>Nitrogen_Dean_and_Bozzelli</td>
+<td>Combustion Chemistry of Nitrogen</td>
+</tr>
+<tr class="row-even"><td>Nitrogen_Glarborg_Gimenez_et_al</td>
+<td>High pressure C2H4 oxidation with nitrogen chemistry</td>
+</tr>
+<tr class="row-odd"><td>Nitrogen_Glarborg_Lucassen_et_al</td>
+<td>Fuel-nitrogen conversion in the combustion of small amines</td>
+</tr>
+<tr class="row-even"><td>Nitrogen_Glarborg_Zhang_et_al</td>
+<td>Premixed nitroethane flames at low pressure</td>
+</tr>
+<tr class="row-odd"><td>OxygenSingTrip</td>
+<td>Reactions of singlet and triplet oxygen</td>
+</tr>
+<tr class="row-even"><td>Sulfur/DMDS</td>
+<td>Dimethyl disulfide (CH3SSCH3)</td>
+</tr>
+<tr class="row-odd"><td>Sulfur/DMS</td>
+<td>Dimethyl disulfide (CH3SSCH3)</td>
+</tr>
+<tr class="row-even"><td>Sulfur/DTBS</td>
+<td>Di-tert-butyl Sulfide (C4H9SSC4H9)</td>
+</tr>
+<tr class="row-odd"><td>Sulfur/Hexanethial_nr</td>
+<td>Hexyl sulfide (C6H13SC6H13) + hexadecane (C16H34)</td>
+</tr>
+<tr class="row-even"><td>Sulfur/Sendt</td>
+<td>Small sulfur molecule</td>
+</tr>
+<tr class="row-odd"><td>Sulfur/TP_Song</td>
+<td>Thiophene (C4H4S, aromatic)</td>
+</tr>
+<tr class="row-even"><td>Sulfur/Thial_Hydrolysis</td>
+<td>Thioformaldehyde (CH2S) and thioacetaldehyde (C2H4S) to COS and CO2</td>
+</tr>
+<tr class="row-odd"><td>TEOS</td>
+<td>Organic oxidized silicone</td>
+</tr>
+<tr class="row-even"><td>c-C5H5_CH3_Sharma</td>
+<td>Cyclopentadienyl + CH3</td>
+</tr>
+<tr class="row-odd"><td>combustion_core</td>
+<td>Leeds University natural gas mechanism (contains versions 2-5)</td>
+</tr>
+<tr class="row-even"><td>fascella</td>
+<td>Cyclopentadienyl + acetyl</td>
+</tr>
+<tr class="row-odd"><td>kislovB</td>
+<td>Formation of indene in combustion</td>
+</tr>
+<tr class="row-even"><td>naphthalene_H</td>
+<td>Cyclopentadiene pyrolysis in the presence of ethene Part 1</td>
+</tr>
+<tr class="row-odd"><td>vinylCPD_H</td>
+<td>Cyclopentadiene pyrolysis in the presence of ethene Part 2</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="families">
 <span id="kineticsfamilies"></span><h2>12.3.2. Families<a class="headerlink" href="#families" title="Permalink to this headline">¶</a></h2>
@@ -123,7 +270,7 @@ estimated from the reaction families.</p>
 </ul>
 <p>There are currently 45 reaction families in RMG:</p>
 <p><strong>1+2_Cycloaddition</strong></p>
-<a class="reference internal image-reference" href="../../../_images/1+2_Cycloaddition.png"><img alt="../../../_images/1+2_Cycloaddition.png" src="../../../_images/1+2_Cycloaddition.png" style="width: 280.4px; height: 52.8px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/1+2_Cycloaddition.png"><img alt="../../../_images/1+2_Cycloaddition.png" src="../../../_images/1+2_Cycloaddition.png" style="width: 280.40000000000003px; height: 52.800000000000004px;" /></a>
 <p><strong>1,2-Birad_to_alkene</strong></p>
 <a class="reference internal image-reference" href="../../../_images/1,2-Birad_to_alkene.png"><img alt="../../../_images/1,2-Birad_to_alkene.png" src="../../../_images/1,2-Birad_to_alkene.png" style="width: 216.8px; height: 16.8px;" /></a>
 <p><strong>1,2_Insertion_carbene</strong></p>
@@ -135,33 +282,33 @@ estimated from the reaction families.</p>
 <p><strong>1,3_Insertion_CO2</strong></p>
 <a class="reference internal image-reference" href="../../../_images/1,3_Insertion_CO2.png"><img alt="../../../_images/1,3_Insertion_CO2.png" src="../../../_images/1,3_Insertion_CO2.png" style="width: 438.8px; height: 55.2px;" /></a>
 <p><strong>1,3_Insertion_ROR</strong></p>
-<a class="reference internal image-reference" href="../../../_images/1,3_Insertion_ROR.png"><img alt="../../../_images/1,3_Insertion_ROR.png" src="../../../_images/1,3_Insertion_ROR.png" style="width: 481.2px; height: 15.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/1,3_Insertion_ROR.png"><img alt="../../../_images/1,3_Insertion_ROR.png" src="../../../_images/1,3_Insertion_ROR.png" style="width: 481.20000000000005px; height: 15.200000000000001px;" /></a>
 <p><strong>1,3_Insertion_RSR</strong></p>
-<a class="reference internal image-reference" href="../../../_images/1,3_Insertion_RSR.png"><img alt="../../../_images/1,3_Insertion_RSR.png" src="../../../_images/1,3_Insertion_RSR.png" style="width: 481.2px; height: 15.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/1,3_Insertion_RSR.png"><img alt="../../../_images/1,3_Insertion_RSR.png" src="../../../_images/1,3_Insertion_RSR.png" style="width: 481.20000000000005px; height: 15.200000000000001px;" /></a>
 <p><strong>1,4_Cyclic_birad_scission</strong></p>
-<a class="reference internal image-reference" href="../../../_images/1,4_Cyclic_birad_scission.png"><img alt="../../../_images/1,4_Cyclic_birad_scission.png" src="../../../_images/1,4_Cyclic_birad_scission.png" style="width: 414.4px; height: 40.8px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/1,4_Cyclic_birad_scission.png"><img alt="../../../_images/1,4_Cyclic_birad_scission.png" src="../../../_images/1,4_Cyclic_birad_scission.png" style="width: 414.40000000000003px; height: 40.800000000000004px;" /></a>
 <p><strong>1,4_Linear_birad_scission</strong></p>
 <a class="reference internal image-reference" href="../../../_images/1,4_Linear_birad_scission.png"><img alt="../../../_images/1,4_Linear_birad_scission.png" src="../../../_images/1,4_Linear_birad_scission.png" style="width: 384.8px; height: 17.2px;" /></a>
 <p><strong>2+2_cycloaddition_CCO</strong></p>
 <a class="reference internal image-reference" href="../../../_images/2+2_cycloaddition_CCO.png"><img alt="../../../_images/2+2_cycloaddition_CCO.png" src="../../../_images/2+2_cycloaddition_CCO.png" style="width: 236.8px; height: 104.0px;" /></a>
 <p><strong>2+2_cycloaddition_Cd</strong></p>
-<a class="reference internal image-reference" href="../../../_images/2+2_cycloaddition_Cd.png"><img alt="../../../_images/2+2_cycloaddition_Cd.png" src="../../../_images/2+2_cycloaddition_Cd.png" style="width: 236.8px; height: 60.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/2+2_cycloaddition_Cd.png"><img alt="../../../_images/2+2_cycloaddition_Cd.png" src="../../../_images/2+2_cycloaddition_Cd.png" style="width: 236.8px; height: 60.400000000000006px;" /></a>
 <p><strong>2+2_cycloaddition_CO</strong></p>
-<a class="reference internal image-reference" href="../../../_images/2+2_cycloaddition_CO.png"><img alt="../../../_images/2+2_cycloaddition_CO.png" src="../../../_images/2+2_cycloaddition_CO.png" style="width: 238.0px; height: 60.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/2+2_cycloaddition_CO.png"><img alt="../../../_images/2+2_cycloaddition_CO.png" src="../../../_images/2+2_cycloaddition_CO.png" style="width: 238.0px; height: 60.400000000000006px;" /></a>
 <p><strong>Birad_recombination</strong></p>
 <a class="reference internal image-reference" href="../../../_images/Birad_recombination.png"><img alt="../../../_images/Birad_recombination.png" src="../../../_images/Birad_recombination.png" style="width: 256.0px; height: 45.2px;" /></a>
 <p><strong>Cyclic_Ether_Formation</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Cyclic_Ether_Formation.png"><img alt="../../../_images/Cyclic_Ether_Formation.png" src="../../../_images/Cyclic_Ether_Formation.png" style="width: 379.2px; height: 44.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Cyclic_Ether_Formation.png"><img alt="../../../_images/Cyclic_Ether_Formation.png" src="../../../_images/Cyclic_Ether_Formation.png" style="width: 379.20000000000005px; height: 44.400000000000006px;" /></a>
 <p><strong>Diels_alder_addition</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Diels_alder_addition.png"><img alt="../../../_images/Diels_alder_addition.png" src="../../../_images/Diels_alder_addition.png" style="width: 294.8px; height: 102.8px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Diels_alder_addition.png"><img alt="../../../_images/Diels_alder_addition.png" src="../../../_images/Diels_alder_addition.png" style="width: 294.8px; height: 102.80000000000001px;" /></a>
 <p><strong>Disproportionation</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Disproportionation.png"><img alt="../../../_images/Disproportionation.png" src="../../../_images/Disproportionation.png" style="width: 422.4px; height: 17.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Disproportionation.png"><img alt="../../../_images/Disproportionation.png" src="../../../_images/Disproportionation.png" style="width: 422.40000000000003px; height: 17.2px;" /></a>
 <p><strong>H_Abstraction</strong></p>
-<a class="reference internal image-reference" href="../../../_images/H_Abstraction.png"><img alt="../../../_images/H_Abstraction.png" src="../../../_images/H_Abstraction.png" style="width: 310.4px; height: 17.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/H_Abstraction.png"><img alt="../../../_images/H_Abstraction.png" src="../../../_images/H_Abstraction.png" style="width: 310.40000000000003px; height: 17.2px;" /></a>
 <p><strong>H_shift_cyclopentadiene</strong></p>
-<a class="reference internal image-reference" href="../../../_images/H_shift_cyclopentadiene.png"><img alt="../../../_images/H_shift_cyclopentadiene.png" src="../../../_images/H_shift_cyclopentadiene.png" style="width: 336.4px; height: 96.0px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/H_shift_cyclopentadiene.png"><img alt="../../../_images/H_shift_cyclopentadiene.png" src="../../../_images/H_shift_cyclopentadiene.png" style="width: 336.40000000000003px; height: 96.0px;" /></a>
 <p><strong>HO2_Elimination_from_PeroxyRadical</strong></p>
-<a class="reference internal image-reference" href="../../../_images/HO2_Elimination_from_PeroxyRadical.png"><img alt="../../../_images/HO2_Elimination_from_PeroxyRadical.png" src="../../../_images/HO2_Elimination_from_PeroxyRadical.png" style="width: 481.2px; height: 18.8px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/HO2_Elimination_from_PeroxyRadical.png"><img alt="../../../_images/HO2_Elimination_from_PeroxyRadical.png" src="../../../_images/HO2_Elimination_from_PeroxyRadical.png" style="width: 481.20000000000005px; height: 18.8px;" /></a>
 <p><strong>Intra_Diels_alder</strong></p>
 <a class="reference internal image-reference" href="../../../_images/Intra_Diels_alder.png"><img alt="../../../_images/Intra_Diels_alder.png" src="../../../_images/Intra_Diels_alder.png" style="width: 428.8px; height: 116.4px;" /></a>
 <p><strong>Intra_Disproportionation</strong></p>
@@ -173,45 +320,45 @@ estimated from the reaction families.</p>
 <p><strong>intra_OH_migration</strong></p>
 <a class="reference internal image-reference" href="../../../_images/intra_OH_migration.png"><img alt="../../../_images/intra_OH_migration.png" src="../../../_images/intra_OH_migration.png" style="width: 379.6px; height: 17.2px;" /></a>
 <p><strong>Intra_R_Add_Endocyclic</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Intra_R_Add_Endocyclic.png"><img alt="../../../_images/Intra_R_Add_Endocyclic.png" src="../../../_images/Intra_R_Add_Endocyclic.png" style="width: 319.2px; height: 48.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Intra_R_Add_Endocyclic.png"><img alt="../../../_images/Intra_R_Add_Endocyclic.png" src="../../../_images/Intra_R_Add_Endocyclic.png" style="width: 319.20000000000005px; height: 48.400000000000006px;" /></a>
 <p><strong>Intra_R_Add_Exocyclic</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Intra_R_Add_Exocyclic.png"><img alt="../../../_images/Intra_R_Add_Exocyclic.png" src="../../../_images/Intra_R_Add_Exocyclic.png" style="width: 322.4px; height: 48.0px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Intra_R_Add_Exocyclic.png"><img alt="../../../_images/Intra_R_Add_Exocyclic.png" src="../../../_images/Intra_R_Add_Exocyclic.png" style="width: 322.40000000000003px; height: 48.0px;" /></a>
 <p><strong>Intra_R_Add_ExoTetCyclic</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Intra_R_Add_ExoTetCyclic.png"><img alt="../../../_images/Intra_R_Add_ExoTetCyclic.png" src="../../../_images/Intra_R_Add_ExoTetCyclic.png" style="width: 351.2px; height: 46.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Intra_R_Add_ExoTetCyclic.png"><img alt="../../../_images/Intra_R_Add_ExoTetCyclic.png" src="../../../_images/Intra_R_Add_ExoTetCyclic.png" style="width: 351.20000000000005px; height: 46.400000000000006px;" /></a>
 <p><strong>Intra_RH_Add_Endocyclic</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Intra_RH_Add_Endocyclic.png"><img alt="../../../_images/Intra_RH_Add_Endocyclic.png" src="../../../_images/Intra_RH_Add_Endocyclic.png" style="width: 380.4px; height: 91.6px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Intra_RH_Add_Endocyclic.png"><img alt="../../../_images/Intra_RH_Add_Endocyclic.png" src="../../../_images/Intra_RH_Add_Endocyclic.png" style="width: 380.40000000000003px; height: 91.60000000000001px;" /></a>
 <p><strong>Intra_RH_Add_Exocyclic</strong></p>
 <a class="reference internal image-reference" href="../../../_images/Intra_RH_Add_Exocyclic.png"><img alt="../../../_images/Intra_RH_Add_Exocyclic.png" src="../../../_images/Intra_RH_Add_Exocyclic.png" style="width: 422.8px; height: 47.2px;" /></a>
 <p><strong>intra_substitutionCS_cyclization</strong></p>
-<a class="reference internal image-reference" href="../../../_images/intra_substitutionCS_cyclization.png"><img alt="../../../_images/intra_substitutionCS_cyclization.png" src="../../../_images/intra_substitutionCS_cyclization.png" style="width: 357.6px; height: 46.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/intra_substitutionCS_cyclization.png"><img alt="../../../_images/intra_substitutionCS_cyclization.png" src="../../../_images/intra_substitutionCS_cyclization.png" style="width: 357.6px; height: 46.400000000000006px;" /></a>
 <p><strong>intra_substitutionCS_isomerization</strong></p>
 <a class="reference internal image-reference" href="../../../_images/intra_substitutionCS_isomerization.png"><img alt="../../../_images/intra_substitutionCS_isomerization.png" src="../../../_images/intra_substitutionCS_isomerization.png" style="width: 346.8px; height: 16.0px;" /></a>
 <p><strong>intra_substitutionS_cyclization</strong></p>
-<a class="reference internal image-reference" href="../../../_images/intra_substitutionS_cyclization.png"><img alt="../../../_images/intra_substitutionS_cyclization.png" src="../../../_images/intra_substitutionS_cyclization.png" style="width: 360.8px; height: 46.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/intra_substitutionS_cyclization.png"><img alt="../../../_images/intra_substitutionS_cyclization.png" src="../../../_images/intra_substitutionS_cyclization.png" style="width: 360.8px; height: 46.400000000000006px;" /></a>
 <p><strong>intra_substitutionS_isomerization</strong></p>
 <a class="reference internal image-reference" href="../../../_images/intra_substitutionS_isomerization.png"><img alt="../../../_images/intra_substitutionS_isomerization.png" src="../../../_images/intra_substitutionS_isomerization.png" style="width: 346.8px; height: 16.0px;" /></a>
 <p><strong>ketoenol</strong></p>
-<a class="reference internal image-reference" href="../../../_images/ketoenol.png"><img alt="../../../_images/ketoenol.png" src="../../../_images/ketoenol.png" style="width: 396.0px; height: 15.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/ketoenol.png"><img alt="../../../_images/ketoenol.png" src="../../../_images/ketoenol.png" style="width: 396.0px; height: 15.200000000000001px;" /></a>
 <p><strong>Korcek_step1</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Korcek_step1.png"><img alt="../../../_images/Korcek_step1.png" src="../../../_images/Korcek_step1.png" style="width: 378.4px; height: 151.6px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Korcek_step1.png"><img alt="../../../_images/Korcek_step1.png" src="../../../_images/Korcek_step1.png" style="width: 378.40000000000003px; height: 151.6px;" /></a>
 <p><strong>Korcek_step2</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Korcek_step2.png"><img alt="../../../_images/Korcek_step2.png" src="../../../_images/Korcek_step2.png" style="width: 473.6px; height: 157.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Korcek_step2.png"><img alt="../../../_images/Korcek_step2.png" src="../../../_images/Korcek_step2.png" style="width: 473.6px; height: 157.20000000000002px;" /></a>
 <p><strong>lone_electron_pair_bond</strong></p>
-<a class="reference internal image-reference" href="../../../_images/lone_electron_pair_bond.png"><img alt="../../../_images/lone_electron_pair_bond.png" src="../../../_images/lone_electron_pair_bond.png" style="width: 326.4px; height: 85.2px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/lone_electron_pair_bond.png"><img alt="../../../_images/lone_electron_pair_bond.png" src="../../../_images/lone_electron_pair_bond.png" style="width: 326.40000000000003px; height: 85.2px;" /></a>
 <p><strong>Oa_R_Recombination</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Oa_R_Recombination.png"><img alt="../../../_images/Oa_R_Recombination.png" src="../../../_images/Oa_R_Recombination.png" style="width: 227.6px; height: 17.6px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Oa_R_Recombination.png"><img alt="../../../_images/Oa_R_Recombination.png" src="../../../_images/Oa_R_Recombination.png" style="width: 227.60000000000002px; height: 17.6px;" /></a>
 <p><strong>R_Addition_COm</strong></p>
-<a class="reference internal image-reference" href="../../../_images/R_Addition_COm.png"><img alt="../../../_images/R_Addition_COm.png" src="../../../_images/R_Addition_COm.png" style="width: 264.8px; height: 58.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/R_Addition_COm.png"><img alt="../../../_images/R_Addition_COm.png" src="../../../_images/R_Addition_COm.png" style="width: 264.8px; height: 58.400000000000006px;" /></a>
 <p><strong>R_Addition_CSm</strong></p>
-<a class="reference internal image-reference" href="../../../_images/R_Addition_CSm.png"><img alt="../../../_images/R_Addition_CSm.png" src="../../../_images/R_Addition_CSm.png" style="width: 266.8px; height: 58.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/R_Addition_CSm.png"><img alt="../../../_images/R_Addition_CSm.png" src="../../../_images/R_Addition_CSm.png" style="width: 266.8px; height: 58.400000000000006px;" /></a>
 <p><strong>R_Addition_MultipleBond</strong></p>
 <a class="reference internal image-reference" href="../../../_images/R_Addition_MultipleBond.png"><img alt="../../../_images/R_Addition_MultipleBond.png" src="../../../_images/R_Addition_MultipleBond.png" style="width: 303.6px; height: 17.2px;" /></a>
 <p><strong>R_Recombination</strong></p>
 <a class="reference internal image-reference" href="../../../_images/R_Recombination.png"><img alt="../../../_images/R_Recombination.png" src="../../../_images/R_Recombination.png" style="width: 214.8px; height: 18.0px;" /></a>
 <p><strong>Substitution_O</strong></p>
-<a class="reference internal image-reference" href="../../../_images/Substitution_O.png"><img alt="../../../_images/Substitution_O.png" src="../../../_images/Substitution_O.png" style="width: 404.4px; height: 16.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Substitution_O.png"><img alt="../../../_images/Substitution_O.png" src="../../../_images/Substitution_O.png" style="width: 404.40000000000003px; height: 16.400000000000002px;" /></a>
 <p><strong>SubstitutionS</strong></p>
-<a class="reference internal image-reference" href="../../../_images/SubstitutionS.png"><img alt="../../../_images/SubstitutionS.png" src="../../../_images/SubstitutionS.png" style="width: 403.2px; height: 16.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/SubstitutionS.png"><img alt="../../../_images/SubstitutionS.png" src="../../../_images/SubstitutionS.png" style="width: 403.20000000000005px; height: 16.400000000000002px;" /></a>
 <div class="section" id="recipe">
 <h3>12.3.2.1. Recipe<a class="headerlink" href="#recipe" title="Permalink to this headline">¶</a></h3>
 <p>The recipe can be found near the top of groups.py and describes the changes in
@@ -256,12 +403,12 @@ bond while a +1 could represent a single bond changing to a double bond.</p>
 <tr class="row-odd"><td>Gain_Radical</td>
 <td>Specified atom</td>
 <td>Number of radicals</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>Lose_Radical</td>
 <td>Specified atom</td>
 <td>Number of radicals</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -417,7 +564,7 @@ rules.py. For more information on modification see <a class="reference internal"
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

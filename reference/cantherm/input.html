@@ -72,13 +72,21 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="cantherm-input-files">
 <h1>CanTherm input files<a class="headerlink" href="#cantherm-input-files" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="rmgpy.cantherm.input.loadInputFile">
-<code class="descclassname">rmgpy.cantherm.input.</code><code class="descname">loadInputFile</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.cantherm.input.loadInputFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the CanTherm input file located at <cite>path</cite> on disk, and return a list of
-the jobs defined in that file.</p>
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/cantherm/input.rst</tt>, line 5)</p>
+autodoc: failed to import function &#8216;loadInputFile&#8217; from module &#8216;rmgpy.cantherm.input&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/cantherm/__init__.py&#8221;, line 30, in &lt;module&gt;
+    from .main import CanTherm
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/cantherm/main.py&#8221;, line 48, in &lt;module&gt;
+    from rmgpy.cantherm.input import loadInputFile
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/cantherm/input.py&#8221;, line 381
+    exec f in global_context, local_context
+         ^
+SyntaxError: Missing parentheses in call to &#8216;exec&#8217;
+</div>
 </div>
 
 
@@ -181,7 +189,7 @@ the jobs defined in that file.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

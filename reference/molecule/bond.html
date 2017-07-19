@@ -72,146 +72,16 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-molecule-bond">
 <h1>rmgpy.molecule.Bond<a class="headerlink" href="#rmgpy-molecule-bond" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.molecule.Bond">
-<em class="property">class </em><code class="descclassname">rmgpy.molecule.</code><code class="descname">Bond</code><a class="headerlink" href="#rmgpy.molecule.Bond" title="Permalink to this definition">¶</a></dt>
-<dd><p>A chemical bond. The attributes are:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="26%" />
-<col width="26%" />
-<col width="49%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Attribute</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><cite>order</cite></td>
-<td><code class="docutils literal"><span class="pre">float</span></code></td>
-<td>The <a class="reference internal" href="#id1"><span class="std std-ref">bond type</span></a></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.applyAction">
-<code class="descname">applyAction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.applyAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the bond as a result of applying <cite>action</cite>, a tuple
-containing the name of the reaction recipe action along with any
-required parameters. The available actions can be found
-<a class="reference internal" href="recipe.html#reaction-recipe-actions"><span class="std std-ref">here</span></a>.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a deep copy of the current bond. Modifying the
-attributes of the copy will not affect the original.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.decrementOrder">
-<code class="descname">decrementOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.decrementOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the bond as a result of applying a CHANGE_BOND action to
-decrease the order by one.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.equivalent">
-<code class="descname">equivalent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.equivalent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if <cite>other</cite> is indistinguishable from this bond, or
-<code class="docutils literal"><span class="pre">False</span></code> otherwise. <cite>other</cite> can be either a <code class="xref py py-class docutils literal"><span class="pre">Bond</span></code> or a
-<code class="xref py py-class docutils literal"><span class="pre">GroupBond</span></code> object.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.getOrderNum">
-<code class="descname">getOrderNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.getOrderNum" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the bond order as a number</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.getOrderStr">
-<code class="descname">getOrderStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.getOrderStr" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns a string representing the bond order</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.getOtherVertex">
-<code class="descname">getOtherVertex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.getOtherVertex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a vertex that makes up part of the edge, return the other vertex.
-Raise a <code class="xref py py-class docutils literal"><span class="pre">ValueError</span></code> if the given vertex is not part of the
-edge.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.incrementOrder">
-<code class="descname">incrementOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.incrementOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the bond as a result of applying a CHANGE_BOND action to
-increase the order by one.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.isBenzene">
-<code class="descname">isBenzene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.isBenzene" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if the bond represents a benzene bond or <code class="docutils literal"><span class="pre">False</span></code> if
-not.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.isDouble">
-<code class="descname">isDouble</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.isDouble" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if the bond represents a double bond or <code class="docutils literal"><span class="pre">False</span></code> if
-not.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.isOrder">
-<code class="descname">isOrder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.isOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if the bond represents a single bond or <code class="docutils literal"><span class="pre">False</span></code> if
-not. This compares floats that takes into account floating point error</p>
-<p>NOTE: we can replace the absolute value relation with math.isclose when
-we swtich to python 3.5+</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.isSingle">
-<code class="descname">isSingle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.isSingle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if the bond represents a single bond or <code class="docutils literal"><span class="pre">False</span></code> if
-not.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.isSpecificCaseOf">
-<code class="descname">isSpecificCaseOf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.isSpecificCaseOf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if <cite>self</cite> is a specific case of <cite>other</cite>, or <code class="docutils literal"><span class="pre">False</span></code>
-otherwise. <cite>other</cite> can be either a <code class="xref py py-class docutils literal"><span class="pre">Bond</span></code> or a
-<code class="xref py py-class docutils literal"><span class="pre">GroupBond</span></code> object.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.isTriple">
-<code class="descname">isTriple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.isTriple" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if the bond represents a triple bond or <code class="docutils literal"><span class="pre">False</span></code> if
-not.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.setOrderNum">
-<code class="descname">setOrderNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.setOrderNum" title="Permalink to this definition">¶</a></dt>
-<dd><p>change the bond order with a number</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.Bond.setOrderStr">
-<code class="descname">setOrderStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.Bond.setOrderStr" title="Permalink to this definition">¶</a></dt>
-<dd><p>set the bond order using a valid bond-order character</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/bond.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;Bond&#8217; from module &#8216;rmgpy.molecule&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
+</div>
 <div class="section" id="bond-types">
 <h2>Bond types<a class="headerlink" href="#bond-types" title="Permalink to this headline">¶</a></h2>
 <p id="id1">The bond type simply indicates the order of a chemical bond. We define the
@@ -354,7 +224,7 @@ following bond types:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

@@ -72,67 +72,50 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-data-base-logicnode">
 <h1>rmgpy.data.base.LogicNode<a class="headerlink" href="#rmgpy-data-base-logicnode" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.data.base.LogicNode">
-<em class="property">class </em><code class="descclassname">rmgpy.data.base.</code><code class="descname">LogicNode</code><span class="sig-paren">(</span><em>items</em>, <em>invert</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>A base class for AND and OR logic nodes.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="rmgpy.data.base.LogicAnd">
-<em class="property">class </em><code class="descclassname">rmgpy.data.base.</code><code class="descname">LogicAnd</code><span class="sig-paren">(</span><em>items</em>, <em>invert</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicAnd" title="Permalink to this definition">¶</a></dt>
-<dd><p>A logical AND node. Structure must match all components.</p>
-<dl class="method">
-<dt id="rmgpy.data.base.LogicAnd.matchToStructure">
-<code class="descname">matchToStructure</code><span class="sig-paren">(</span><em>database</em>, <em>structure</em>, <em>atoms</em>, <em>strict=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicAnd.matchToStructure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Does this node in the given database match the given structure with the labeled atoms?</p>
-<p>Setting <cite>strict</cite> to True makes enforces matching of atomLabels in the structure to every
-atomLabel in the node.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="rmgpy.data.base.LogicOr">
-<em class="property">class </em><code class="descclassname">rmgpy.data.base.</code><code class="descname">LogicOr</code><span class="sig-paren">(</span><em>items</em>, <em>invert</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicOr" title="Permalink to this definition">¶</a></dt>
-<dd><p>A logical OR node. Structure can match any component.</p>
-<p>Initialize with a list of component items and a boolean instruction to invert the answer.</p>
-<dl class="method">
-<dt id="rmgpy.data.base.LogicOr.getPossibleStructures">
-<code class="descname">getPossibleStructures</code><span class="sig-paren">(</span><em>entries</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicOr.getPossibleStructures" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of the possible structures below this node.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.data.base.LogicOr.matchLogicOr">
-<code class="descname">matchLogicOr</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicOr.matchLogicOr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is other the same LogicOr group as self?</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.data.base.LogicOr.matchToStructure">
-<code class="descname">matchToStructure</code><span class="sig-paren">(</span><em>database</em>, <em>structure</em>, <em>atoms</em>, <em>strict=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.LogicOr.matchToStructure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Does this node in the given database match the given structure with the labeled atoms?</p>
-<p>Setting <cite>strict</cite> to True makes enforces matching of atomLabels in the structure to every
-atomLabel in the node.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.data.base.makeLogicNode">
-<code class="descclassname">rmgpy.data.base.</code><code class="descname">makeLogicNode</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.data.base.makeLogicNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates and returns a node in the tree which is a logic node.</p>
-<p>String should be of the form:</p>
-<ul class="simple">
-<li>OR{}</li>
-<li>AND{}</li>
-<li>NOT OR{}</li>
-<li>NOT AND{}</li>
-</ul>
-<p>And the returned object will be of class LogicOr or LogicAnd</p>
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/data/logicnode.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;LogicNode&#8217; from module &#8216;rmgpy.data.base&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/base.py&#8221;, line 233
+    exec f in global_context, local_context
+         ^
+SyntaxError: Missing parentheses in call to &#8216;exec&#8217;
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/data/logicnode.rst</tt>, line 7)</p>
+autodoc: failed to import class &#8216;LogicAnd&#8217; from module &#8216;rmgpy.data.base&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/base.py&#8221;, line 233
+    exec f in global_context, local_context
+         ^
+SyntaxError: Missing parentheses in call to &#8216;exec&#8217;
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/data/logicnode.rst</tt>, line 9)</p>
+autodoc: failed to import class &#8216;LogicOr&#8217; from module &#8216;rmgpy.data.base&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/base.py&#8221;, line 233
+    exec f in global_context, local_context
+         ^
+SyntaxError: Missing parentheses in call to &#8216;exec&#8217;
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/data/logicnode.rst</tt>, line 11)</p>
+autodoc: failed to import function &#8216;makeLogicNode&#8217; from module &#8216;rmgpy.data.base&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/data/base.py&#8221;, line 233
+    exec f in global_context, local_context
+         ^
+SyntaxError: Missing parentheses in call to &#8216;exec&#8217;
+</div>
 </div>
 
 
@@ -235,7 +218,7 @@ atomLabel in the node.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

@@ -72,65 +72,56 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-molecule-symmetry">
 <h1>rmgpy.molecule.symmetry<a class="headerlink" href="#rmgpy-molecule-symmetry" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="rmgpy.molecule.symmetry.calculateAtomSymmetryNumber">
-<code class="descclassname">rmgpy.molecule.symmetry.</code><code class="descname">calculateAtomSymmetryNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.symmetry.calculateAtomSymmetryNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the symmetry number centered at <cite>atom</cite> in the structure. The
-<cite>atom</cite> of interest must not be in a cycle.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.symmetry.calculateBondSymmetryNumber">
-<code class="descclassname">rmgpy.molecule.symmetry.</code><code class="descname">calculateBondSymmetryNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.symmetry.calculateBondSymmetryNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the symmetry number centered at <cite>bond</cite> in the structure.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.symmetry.calculateAxisSymmetryNumber">
-<code class="descclassname">rmgpy.molecule.symmetry.</code><code class="descname">calculateAxisSymmetryNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.symmetry.calculateAxisSymmetryNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the axis symmetry number correction. The &#8220;axis&#8221; refers to a series
-of two or more cumulated double bonds (e.g. C=C=C, etc.). Corrections
-for single C=C bonds are handled in getBondSymmetryNumber().</p>
-<p>Each axis (C=C=C) has the potential to double the symmetry number.
-If an end has 0 or 1 groups (eg. =C=CJJ or =C=C-R) then it cannot 
-alter the axis symmetry and is disregarded:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">..</span>        <span class="n">A</span><span class="o">-</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">-</span><span class="n">A</span>
-
-  <span class="n">s</span><span class="o">=</span><span class="mi">1</span>                <span class="n">s</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/symmetry.rst</tt>, line 5)</p>
+autodoc: failed to import function &#8216;calculateAtomSymmetryNumber&#8217; from module &#8216;rmgpy.molecule.symmetry&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
-<p>If an end has 2 groups that are different then it breaks the symmetry 
-and the symmetry for that axis is 1, no matter what&#8217;s at the other end:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span>\               <span class="n">A</span>\         <span class="o">/</span><span class="n">A</span>
-  <span class="n">T</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">-</span><span class="n">A</span>      <span class="n">T</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">T</span>
-<span class="n">B</span><span class="o">/</span>               <span class="n">A</span><span class="o">/</span>         \<span class="n">B</span>
-      <span class="n">s</span><span class="o">=</span><span class="mi">1</span>             <span class="n">s</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/symmetry.rst</tt>, line 7)</p>
+autodoc: failed to import function &#8216;calculateBondSymmetryNumber&#8217; from module &#8216;rmgpy.molecule.symmetry&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
-<p>If you have one or more ends with 2 groups, and neither end breaks the 
-symmetry, then you have an axis symmetry number of 2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span>\         <span class="o">/</span><span class="n">B</span>      <span class="n">A</span>\         
-  <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span>          <span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="o">-</span><span class="n">B</span>
-<span class="n">A</span><span class="o">/</span>         \<span class="n">B</span>      <span class="n">A</span><span class="o">/</span>         
-      <span class="n">s</span><span class="o">=</span><span class="mi">2</span>                <span class="n">s</span><span class="o">=</span><span class="mi">2</span>
-</pre></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/symmetry.rst</tt>, line 9)</p>
+autodoc: failed to import function &#8216;calculateAxisSymmetryNumber&#8217; from module &#8216;rmgpy.molecule.symmetry&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.symmetry.calculateCyclicSymmetryNumber">
-<code class="descclassname">rmgpy.molecule.symmetry.</code><code class="descname">calculateCyclicSymmetryNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.symmetry.calculateCyclicSymmetryNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the symmetry number correction for cyclic regions of a molecule.
-For complicated fused rings the smallest set of smallest rings is used.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.symmetry.calculateSymmetryNumber">
-<code class="descclassname">rmgpy.molecule.symmetry.</code><code class="descname">calculateSymmetryNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.symmetry.calculateSymmetryNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the symmetry number for the structure. The symmetry number
-includes both external and internal modes.</p>
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/symmetry.rst</tt>, line 11)</p>
+autodoc: failed to import function &#8216;calculateCyclicSymmetryNumber&#8217; from module &#8216;rmgpy.molecule.symmetry&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/symmetry.rst</tt>, line 13)</p>
+autodoc: failed to import function &#8216;calculateSymmetryNumber&#8217; from module &#8216;rmgpy.molecule.symmetry&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
+</div>
 </div>
 
 
@@ -233,7 +224,7 @@ includes both external and internal modes.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

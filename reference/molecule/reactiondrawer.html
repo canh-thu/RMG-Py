@@ -72,31 +72,16 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-molecule-draw-reactiondrawer">
 <h1>rmgpy.molecule.draw.ReactionDrawer<a class="headerlink" href="#rmgpy-molecule-draw-reactiondrawer" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.molecule.draw.ReactionDrawer">
-<em class="property">class </em><code class="descclassname">rmgpy.molecule.draw.</code><code class="descname">ReactionDrawer</code><span class="sig-paren">(</span><em>options=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.draw.ReactionDrawer" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class provides functionality for drawing chemical reactions using the
-skeletal formula of each reactant and product molecule via the Cairo 2D
-graphics engine. The most common use case is simply:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ReactionDrawer</span><span class="p">()</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">reaction</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;reaction.png&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/reactiondrawer.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;ReactionDrawer&#8217; from module &#8216;rmgpy.molecule.draw&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
-<p>where <code class="docutils literal"><span class="pre">reaction</span></code> is the <code class="xref py py-class docutils literal"><span class="pre">Reaction</span></code> object to draw. You can also
-pass a dict of options to the constructor to affect how the molecules are
-drawn.</p>
-<dl class="method">
-<dt id="rmgpy.molecule.draw.ReactionDrawer.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><em>reaction</em>, <em>format</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.draw.ReactionDrawer.draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw the given <cite>reaction</cite> using the given image <cite>format</cite> - pdf, svg, 
-ps, or png. If <cite>path</cite> is given, the drawing is saved to that location
-on disk.</p>
-<p>This function returns the Cairo surface and context used to create the
-drawing, as well as a bounding box for the molecule being drawn as the
-tuple (<cite>left</cite>, <cite>top</cite>, <cite>width</cite>, <cite>height</cite>).</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 
@@ -199,7 +184,7 @@ tuple (<cite>left</cite>, <cite>top</cite>, <cite>width</cite>, <cite>height</ci
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

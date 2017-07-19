@@ -72,78 +72,26 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-molecule-atomtype">
 <h1>rmgpy.molecule.AtomType<a class="headerlink" href="#rmgpy-molecule-atomtype" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="atom-types"></span><dl class="class">
-<dt id="rmgpy.molecule.AtomType">
-<em class="property">class </em><code class="descclassname">rmgpy.molecule.</code><code class="descname">AtomType</code><a class="headerlink" href="#rmgpy.molecule.AtomType" title="Permalink to this definition">¶</a></dt>
-<dd><p>A class for internal representation of atom types. Using unique objects
-rather than strings allows us to use fast pointer comparisons instead of
-slow string comparisons, as well as store extra metadata. In particular,
-we store metadata describing the atom type&#8217;s hierarchy with regard to other
-atom types, and the atom types that can result when various actions
-involving this atom type are taken. The attributes are:</p>
+<div class="system-message" id="atom-types">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/atomtype.rst</tt>, line 7)</p>
+autodoc: failed to import class &#8216;AtomType&#8217; from module &#8216;rmgpy.molecule&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
+</div>
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">docstring of rmgpy.molecule.AtomType</tt>, line 23)</p>
-<p>Malformed table.
-Text in column margin in table line 16.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>=================== =================== ====================================
-Attribute           Type                Description
-=================== =================== ====================================
-`label`             ``str``             A unique label for the atom type
-`generic`           ``list``            The atom types that are more generic than this one
-`specific`          ``list``            The atom types that are more specific than this one
-`incrementBond`     ``list``            The atom type(s) that result when an adjacent bond&#39;s order is incremented
-`decrementBond`     ``list``            The atom type(s) that result when an adjacent bond&#39;s order is decremented
-`formBond`          ``list``            The atom type(s) that result when a new single bond is formed to this atom type
-`breakBond`         ``list``            The atom type(s) that result when an existing single bond to this atom type is broken
-`incrementRadical`  ``list``            The atom type(s) that result when the number of radical electrons is incremented
-`decrementRadical`  ``list``            The atom type(s) that result when the number of radical electrons is decremented
-`incrementLonePair` ``list``            The atom type(s) that result when the number of lone electron pairs is incremented
-`decrementLonePair` ``list``            The atom type(s) that result when the number of lone electron pairs is decremented
-
-The following features are what are required in a given atomtype. Any int in the list is acceptable.
-An empty list is a wildcard
-&#39;single&#39;            &#39;&#39;list&#39;&#39;            The total number of single bonds on the atom
-&#39;allDouble&#39;         &#39;&#39;list&#39;&#39;            The total number of double bonds on the atom
-&#39;rDouble&#39;           &#39;&#39;list&#39;&#39;            The number of double bonds to any non-oxygen, nonsulfur
-&#39;oDouble&#39;           &#39;&#39;list&#39;&#39;            The number of double bonds to oxygen
-&#39;sDouble&#39;           &#39;&#39;list&#39;&#39;            The number of double bonds to sulfur
-&#39;triple&#39;            &#39;&#39;list&#39;&#39;            The total number of triple bonds on the atom
-&#39;benzene&#39;           &#39;&#39;list&#39;&#39;            The total number of benzene bonds on the atom
-&#39;lonePairs&#39;         &#39;&#39;list&#39;&#39;            The number of lone pairs on the atom
-=================== =================== ====================================
-</pre></div>
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/molecule/atomtype.rst</tt>, line 10)</p>
+autodoc: failed to import function &#8216;getAtomType&#8217; from module &#8216;rmgpy.molecule&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/molecule/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .atomtype import *
+ImportError: dynamic module does not define module export function (PyInit_atomtype)
 </div>
-</div>
-<dl class="method">
-<dt id="rmgpy.molecule.AtomType.equivalent">
-<code class="descname">equivalent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.AtomType.equivalent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <code class="docutils literal"><span class="pre">True</span></code> if two atom types <cite>atomType1</cite> and <cite>atomType2</cite> are
-equivalent or <code class="docutils literal"><span class="pre">False</span></code>  otherwise. This function respects wildcards,
-e.g. <code class="docutils literal"><span class="pre">R!H</span></code> is equivalent to <code class="docutils literal"><span class="pre">C</span></code>.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.AtomType.getFeatures">
-<code class="descname">getFeatures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.AtomType.getFeatures" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list of the features that are checked to determine atomtype</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.molecule.AtomType.isSpecificCaseOf">
-<code class="descname">isSpecificCaseOf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.AtomType.isSpecificCaseOf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <code class="docutils literal"><span class="pre">True</span></code> if atom type <cite>atomType1</cite> is a specific case of
-atom type <cite>atomType2</cite> or <code class="docutils literal"><span class="pre">False</span></code>  otherwise.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="rmgpy.molecule.getAtomType">
-<code class="descclassname">rmgpy.molecule.</code><code class="descname">getAtomType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.molecule.getAtomType" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine the appropriate atom type for an <code class="xref py py-class docutils literal"><span class="pre">Atom</span></code> object <cite>atom</cite>
-with local bond structure <cite>bonds</cite>, a <code class="docutils literal"><span class="pre">dict</span></code> containing atom-bond pairs.</p>
-</dd></dl>
-
 <p>The atom type of an atom describes the atom itself and (often) something about
 the local bond structure around that atom. This is a useful semantic tool for
 accelerating graph isomorphism queries, and a useful shorthand when specifying
@@ -357,7 +305,7 @@ molecular substructure patterns via an RMG-style adjacency list.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>

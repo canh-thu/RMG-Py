@@ -72,70 +72,26 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
             
   <div class="section" id="rmgpy-kinetics-wigner">
 <h1>rmgpy.kinetics.Wigner<a class="headerlink" href="#rmgpy-kinetics-wigner" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="rmgpy.kinetics.Wigner">
-<em class="property">class </em><code class="descclassname">rmgpy.kinetics.</code><code class="descname">Wigner</code><span class="sig-paren">(</span><em>frequency</em><span class="sig-paren">)</span><a class="headerlink" href="#rmgpy.kinetics.Wigner" title="Permalink to this definition">¶</a></dt>
-<dd><p>A tunneling model based on the Wigner formula. The attributes are:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Attribute</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><cite>frequency</cite></td>
-<td>The imaginary frequency of the transition state</td>
-</tr>
-</tbody>
-</table>
-<p>An early formulation for incorporating the effect of tunneling is that of
-Wigner <a class="reference internal" href="#wigner" id="id1">[1932Wigner]</a>:</p>
-<div class="math">
-\[\kappa(T) = 1 + \frac{1}{24} \left( \frac{h \left| \nu_\mathrm{TS} \right|}{ k_\mathrm{B} T} \right)^2\]</div>
-<p>where <span class="math">\(h\)</span> is the Planck constant, <span class="math">\(\nu_\mathrm{TS}\)</span> is the
-negative frequency, <span class="math">\(k_\mathrm{B}\)</span> is the Boltzmann constant, and
-<span class="math">\(T\)</span> is the absolute temperature.</p>
-<p>The Wigner formula represents the first correction term in a perturbative
-expansion for a parabolic barrier <a class="reference internal" href="#bell" id="id2">[1959Bell]</a>, and is therefore only accurate
-in the limit of a small tunneling correction. There are many cases for which
-the tunneling correction is very large; for these cases the Wigner model is
-inappropriate.</p>
-<dl class="method">
-<dt id="rmgpy.kinetics.Wigner.calculateTunnelingFactor">
-<code class="descname">calculateTunnelingFactor</code><span class="sig-paren">(</span><em>self</em>, <em>double T</em><span class="sig-paren">)</span> &#x2192; double<a class="headerlink" href="#rmgpy.kinetics.Wigner.calculateTunnelingFactor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate and return the value of the Wigner tunneling correction for
-the reaction at the temperature <cite>T</cite> in K.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rmgpy.kinetics.Wigner.calculateTunnelingFunction">
-<code class="descname">calculateTunnelingFunction</code><span class="sig-paren">(</span><em>self</em>, <em>ndarray Elist</em><span class="sig-paren">)</span> &#x2192; ndarray<a class="headerlink" href="#rmgpy.kinetics.Wigner.calculateTunnelingFunction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Raises <code class="xref py py-class docutils literal"><span class="pre">NotImplementedError</span></code>, as the Wigner tunneling model
-does not have a well-defined energy-dependent tunneling function.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="rmgpy.kinetics.Wigner.frequency">
-<code class="descname">frequency</code><a class="headerlink" href="#rmgpy.kinetics.Wigner.frequency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The negative frequency along the reaction coordinate.</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/mark/workspace/RMG-Py/documentation/source/reference/kinetics/wigner.rst</tt>, line 5)</p>
+autodoc: failed to import class &#8216;Wigner&#8217; from module &#8216;rmgpy.kinetics&#8217;; the following exception was raised:
+Traceback (most recent call last):
+  File &#8220;/home/mark/anaconda3/lib/python3.6/site-packages/Sphinx-1.5.1-py3.6.egg/sphinx/ext/autodoc.py&#8221;, line 547, in import_object
+    __import__(self.modname)
+  File &#8220;/home/mark/workspace/RMG-Py/rmgpy/kinetics/__init__.py&#8221;, line 31, in &lt;module&gt;
+    from .model import KineticsModel, PDepKineticsModel, TunnelingModel, \
+ImportError: dynamic module does not define module export function (PyInit_model)
+</div>
 <table class="docutils citation" frame="void" id="wigner" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1932Wigner]</a></td><td>E.Wigner. <em>Phys. Rev.</em> <strong>40</strong>, p. 749-759 (1932). <a class="reference external" href="http://dx.doi.org/10.1103/PhysRev.40.749">doi:10.1103/PhysRev.40.749</a></td></tr>
+<tr><td class="label">[1932Wigner]</td><td>E.Wigner. <em>Phys. Rev.</em> <strong>40</strong>, p. 749-759 (1932). <a class="reference external" href="http://dx.doi.org/10.1103/PhysRev.40.749">doi:10.1103/PhysRev.40.749</a></td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="bell" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1959Bell]</a></td><td>R. P. Bell. <em>Trans. Faraday Soc.</em> <strong>55</strong>, p. 1-4 (1959). <a class="reference external" href="http://dx.doi.org/10.1039/TF9595500001">doi:10.1039/TF9595500001</a></td></tr>
+<tr><td class="label">[1959Bell]</td><td>R. P. Bell. <em>Trans. Faraday Soc.</em> <strong>55</strong>, p. 1-4 (1959). <a class="reference external" href="http://dx.doi.org/10.1039/TF9595500001">doi:10.1039/TF9595500001</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -240,7 +196,7 @@ does not have a well-defined energy-dependent tunneling function.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2002-2015, William H. Green, Richard H. West, and the RMG Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.4.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
 </html>
