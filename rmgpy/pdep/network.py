@@ -39,11 +39,8 @@ import logging
 
 import rmgpy.constants as constants
 from rmgpy.reaction import Reaction
-
+from rmgpy.exceptions import NetworkError
 ################################################################################
-
-class NetworkError(Exception): 
-    pass
 
 class InvalidMicrocanonicalRateError(NetworkError):
     """Used when the k(E) calculation does not give the correct kf(T) or Kc(T)"""
