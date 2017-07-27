@@ -44,7 +44,7 @@ from rmgpy.constraints import failsSpeciesConstraints
 from rmgpy.quantity import Quantity
 import rmgpy.species
 from rmgpy.thermo.thermoengine import submit
-
+from rmgpy.data.rmg import getDB
 from rmgpy.data.base import ForbiddenStructureException
 from rmgpy.data.kinetics.depository import DepositoryReaction
 from rmgpy.data.kinetics.family import KineticsFamily, TemplateReaction
@@ -1172,7 +1172,12 @@ class CoreEdgeReactionModel:
         ensure it is supposed to be a core reaction (i.e. all of its reactants
         AND all of its products are in the list of core species).
         """
+        database = getDB('kinetics')
         if rxn not in self.core.reactions:
+            if isinstance(rxn,TemplateReaction):
+                # get accurate degeneracy of core reactions
+                family = database.families[rxn.family]
+                rxn.degeneracy = family.calculateDegeneracy(rxn)
             self.core.reactions.append(rxn)
         if rxn in self.edge.reactions:
             self.edge.reactions.remove(rxn)
