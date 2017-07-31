@@ -126,6 +126,23 @@ class InvalidAdjacencyListError(Exception):
     """
     pass
 
+class InvalidMicrocanonicalRateError(NetworkError):
+    """
+    Used in pressure dependence when the k(E) calculation does not give 
+    the correct kf(T) or Kc(T)
+    """
+    def __init__(self,message, k_ratio=1.0, Keq_ratio=1.0):
+        self.message = message
+        self.k_ratio = k_ratio
+        self.Keq_ratio = Keq_ratio
+    def badness(self):
+        """
+        How bad is the error?
+        
+        Returns the max of the absolute logarithmic errors of kf and Kc
+        """
+        return max(abs(math.log10(self.k_ratio)), abs(math.log10(self.Keq_ratio)))
+
 class KekulizationError(Exception):
     """
     An exception to be raised when encountering an error while kekulizing an aromatic molecule.
@@ -199,6 +216,12 @@ class ReservoirStateError(Exception):
     """
     An exception raised when the reservoir state method is unsuccessful for
     any reason. Pass a string describing the cause of the exceptional behavior.
+    """
+    pass
+
+class SettingsError(Exception):
+    """
+    An exception raised when dealing with settings.
     """
     pass
 
