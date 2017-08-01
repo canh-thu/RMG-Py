@@ -31,7 +31,7 @@ def parseCommandLineArguments():
     parser.add_argument('--output', type=str, nargs=1, default='',help='Output folder')
     parser.add_argument('--original', type=str, nargs=1, default='', 
                         help='Location of the isotopeless mechanism')
-    parser.add_argument('--maximumIsotopicAtoms', type=int, nargs=1, default=1000000,
+    parser.add_argument('--maximumIsotopicAtoms', type=int, nargs=1, default=[1000000],
                         help='The maxuminum number of isotopes you allow in a specific molecule')
     parser.add_argument('--useOriginalReactions' , action='store_true', default=False,
                         help='use reactions from the original rmgpy generated chem_annotated.inp file')
@@ -43,14 +43,13 @@ def parseCommandLineArguments():
 def main():
 
     args = parseCommandLineArguments()
-
     if args.useOriginalReactions and not args.original:
         raise AttributeError('Cannot use original reactions without a previously run RMG job')
-    maximumIsotopicAtoms = args.maximumIsotopicAtoms
+    maximumIsotopicAtoms = args.maximumIsotopicAtoms[0]
     useOriginalReactions = args.useOriginalReactions
     inputFile = args.input
-    outputdir = os.path.abspath(args.output) if args.output else os.path.abspath('.')
-    original = os.path.abspath(args.original[0]) if args.original[0] else None
+    outputdir = os.path.abspath(args.output[0]) if args.output else os.path.abspath('.')
+    original = os.path.abspath(args.original[0]) if args.original else None
 
     initializeLog(logging.INFO, os.path.join(os.getcwd(), 'RMG.log'))
     run(inputFile, outputdir, original=original, 
