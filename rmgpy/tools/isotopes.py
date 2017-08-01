@@ -160,7 +160,7 @@ def generateIsotopeReactions(isotopeless_reactions, isotopes):
     # make sure all isotopeless reactions have templates and are TemplateReaction objects
     for rxn in isotopeless_reactions:
         assert isinstance(rxn,TemplateReaction)
-        assert rxn.template is not None
+        assert rxn.template is not None, 'isotope reaction {0} does not have a template attribute. Full details :\n\n{1}'.format(str(rxn),repr(rxn))
 
     from rmgpy.reaction import _isomorphicSpeciesList
     from rmgpy.rmg.react import reactSpecies
@@ -694,10 +694,10 @@ def ensure_correct_degeneracies(reaction_isotopomer_list, print_data = False, r_
         pass_species.append(low_fluxes or accurate)
     return all(pass_species)
 
-def run(inputFile, outputDir, original=None):
+def run(inputFile, outputDir, original=None, maximumIsotopicAtoms = 1,
+                            useOriginalReactions = False):
     """
-    Accepts one input file with the RMG-Py model to generate. This file can contain 
-    the optional parameter 'maximumIsotopicAtoms' to reduce isotope labeling.
+    Accepts one input file with the RMG-Py model to generate.
 
     Firstly, generates the RMG model for the first input file. Takes the core species of that mechanism
     and generates all isotopomers of those core species. Next, generates all reactions between the
@@ -729,20 +729,10 @@ def run(inputFile, outputDir, original=None):
         logging.debug('Species constraints could not be found.')
         raise
 
-    try:
-        maxIsotopes = speciesConstraints['maximumIsotopicAtoms']
-    except KeyError:
-        logging.error('Could not find the maxIsotopicAtoms constraint in the input file. Exiting...')
-        raise
-    try:
-        useOriginalReactions = speciesConstraints['useOriginalReactions']
-    except KeyError:
-        logging.info('isotope: useOriginalReactions was not set in input file. Generating all reactions.')
-
     logging.info("isotope: adding all the new and old isotopomers")
     for spc in rmg.reactionModel.core.species:
         findCp0andCpInf(spc, spc.thermo)
-        isotopes.append([spc] + generateIsotopomers(spc, maxIsotopes))
+        isotopes.append([spc] + generateIsotopomers(spc, maximumIsotopicAtoms))
     logging.info('isotope: number of isotopomers: {}'.format(sum([len(isotopomer) for isotopomer in isotopes if isotopomer])))
 
     outputdirIso = os.path.join(outputDir, 'iso')
